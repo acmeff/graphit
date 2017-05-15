@@ -1,4 +1,4 @@
-#Graphit
+# Graphit
 
 [Heroku link][heroku]
 
@@ -7,7 +7,7 @@
 [heroku]: http://www.heroku.com
 [trello]: https://trello.com/b/qANnL4xW/graphit
 
-##Minimum Viable Product
+## Minimum Viable Product
 
 Graphit is an application inspired by Chartio. It is build using Ruby on Rails and React/Redux. Graphit will satisfy the following criteria by the end of Week 9, along with adequate styling, smooth navigation, and sufficient seed data:
 
@@ -19,7 +19,7 @@ Graphit is an application inspired by Chartio. It is build using Ruby on Rails a
 - [ ] Users can share charts with other Users
 - [ ] Supports JSON, TSV, and CSV formats
 
-##Design Docs
+## Design Docs
 
 * [View Wireframes][wireframes]
 * [React Components][components]
@@ -31,9 +31,11 @@ Graphit is an application inspired by Chartio. It is build using Ruby on Rails a
 [components]: docs/component-hierarchy.md
 [sample-state]: docs/sample-state.md
 [schema]: docs/schema.md
-##Implementation Timeline
+[api-endpoints]: docs/api-endpoints.md
+## Implementation Timeline
 
-###Phase 1: Setup Backend and Implement Front End User Authentication (1 day)
+### Phase 1: Setup Backend and Implement Front End User Authentication (1 day)
+
 **Objective:** Functioning app with front and back-end Authentication
 
 
