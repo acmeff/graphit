@@ -27,7 +27,7 @@
  - Share
   - SearchUsers
   - SearchUsersResults
-  - *props: getUsers, addGraphing*
+  - *props: getUsers, addUserGraph*
 
 **DataTableIndexContainer**
  - DataTableIndex
@@ -38,8 +38,9 @@
  - DataTable
  - *props: tableDetail, getTable*
 
-**Nav**
-
+**NavContainer**
+ - Nav
+ - *props: session*
 
 
 
