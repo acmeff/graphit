@@ -4,7 +4,7 @@
 
 ### Root
 
-- `GET /` - loads React web app
+- `GET /`
 
 ## JSON API
 
@@ -32,5 +32,5 @@
 - `DELETE /api/tables/:id`
 
 ### Graphings
-- Links a user to their graphs(both shared and created)
+- Links a user to their graphs (both shared and created)
 - `POST /api/graphings`

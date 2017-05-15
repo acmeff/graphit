@@ -20,7 +20,7 @@
 **ShareContainer**
  - Share
   + SearchUsers
-    + SearchUsersResults
+  + SearchUsersResults
 
 **DataTableIndexContainer**
  - DataTableIndex

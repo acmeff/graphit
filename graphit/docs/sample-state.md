@@ -9,14 +9,14 @@
   graphs: {
     1: {
       id: 1,
-      title: 'All the gin joins',
+      title: 'Cat mentions by a/A cohort',
       owner: false
     }
   },
   tables: {
     3: {
       id: 3,
-      title: 'Beginning of a beautiful friendship',
+      title: 'a/A cohort data',
     }
   },
   users: {
@@ -26,14 +26,14 @@
     }
   },
   graphDetail: {
-    id: null,
+    id: 1,
     title: '',
     source: 3,
     x-data: {},
     y-data: {}
   },
   tableDetail: {
-    id: null,
+    id: 3,
     title: '',
     data: {}
   }
