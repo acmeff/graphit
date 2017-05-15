@@ -28,10 +28,10 @@ title       | string    | not null
 content     | json      | not null
 
 
-## graphings
+## user_graphs
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key, indexed, unique
 graph_id    | integer   | not null, foreign key, indexed
-is_owner    | boolean   | not null 
+is_owner    | boolean   | not null

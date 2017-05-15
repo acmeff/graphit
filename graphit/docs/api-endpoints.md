@@ -31,6 +31,6 @@
 - `GET /api/tables/:id`
 - `DELETE /api/tables/:id`
 
-### Graphings
-- Links a user to their graphs (both shared and created)
-- `POST /api/graphings`
+### user_graphs
+- *includes param indicating if the user is the creator/owner of the graph*
+- `POST /api/user_graphs`
