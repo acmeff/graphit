@@ -38,11 +38,11 @@ Graphit is an application inspired by Chartio. It is build using Ruby on Rails a
 
 **Objective:** Functioning app with front and back-end Authentication
 
-### Phase 2: Upload data tables: tables model, migration, API, and components (2 days)
+### Phase 2: Uploading data tables: tables model, API, and components (3 days)
 
 **Objective:** Data can be uploaded and persisted to the database
 
-### Phase 3: Create graphs: graphs model, migration, API, and components (3 days)
+### Phase 3: Creating graphs: graphs model, API, and components (3 days)
 
 **Objective:** Use data tables to create graphical visualizations which can be persisted
 
