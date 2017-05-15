@@ -27,11 +27,11 @@ Graphit is an application inspired by Chartio. It is build using Ruby on Rails a
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
-[components]: docs/component-hierarchy.md
-[sample-state]: docs/sample-state.md
-[schema]: docs/schema.md
-[api-endpoints]: docs/api-endpoints.md
+[wireframes]: wireframes
+[components]: component-hierarchy.md
+[sample-state]: sample-state.md
+[schema]: schema.md
+[api-endpoints]: api-endpoints.md
 ## Implementation Timeline
 
 ### Phase 1: Setup Backend and Implement Front End User Authentication (1 day)
