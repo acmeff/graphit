@@ -11,8 +11,9 @@
  - Graph
 
 **CreateGraphContainer**
- - Input
- - Preview
+ -CreateGraph
+  + Input
+  + Preview
 
 **UploadDataContainer**
  - UploadData
