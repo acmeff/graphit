@@ -2,7 +2,8 @@ import { connect } from 'react-redux';
 import AuthForm from './auth_form';
 import { login, signUp } from '../../actions/session_actions';
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = state => ({
+  errors: state.session.errors
 });
 
 const mapDispatchToProps = dispatch => ({

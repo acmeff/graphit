@@ -39,6 +39,10 @@ class AuthForm extends React.Component{
     }
   }
 
+  renderErrors(){
+    return this.props.errors.map((error, idx) => <li key={idx}>{error}</li>);
+  }
+
 
   render(){
     this.authType();
@@ -46,6 +50,7 @@ class AuthForm extends React.Component{
       <section>
         <form>
           <h1>Welcome to Graphit</h1>
+          {this.renderErrors()}
           <input type="text"
             onChange={this.update('username')}
             placeholder='username'
