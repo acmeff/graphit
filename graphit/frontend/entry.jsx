@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { login, logout, signUp } from './util/session_api_util';
+import { login, logout, signUp } from './actions/session_actions';
 
 window.login = login;
 window.logout = logout;
