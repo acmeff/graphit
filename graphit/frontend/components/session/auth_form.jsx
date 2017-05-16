@@ -17,7 +17,7 @@ class AuthForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.type(this.state);
+    this.type(this.state).then(this.props.history.push('/graphs'));
   }
 
   handleRedirect(e){
