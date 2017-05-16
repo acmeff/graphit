@@ -43,12 +43,14 @@ class AuthForm extends React.Component{
       this.altButton = <button name='signup'
                                onClick={this.handleRedirect}>Sign Up</button>;
       this.message = <h3>Please sign in</h3>;
+      this.altMessage = <h5>Not a member yet?</h5>
     } else {
       this.type = this.props.signUp;
       this.typeDisplay = "Sign Up";
       this.altButton = <button name='signin'
                                onClick={this.handleRedirect}>Login</button>;
       this.message = <h3>Please create an account</h3>;
+      this.altMessage = <h5>Already a member?</h5>
     }
   }
 
@@ -86,8 +88,10 @@ class AuthForm extends React.Component{
           <br/>
           <button onClick={this.handleSubmit}>{this.typeDisplay}</button>
           <button onClick={this.handleDemo} name='demo'>Demo</button>
-          <br/>
+
         </form>
+        {this.altMessage}
+        <br/>
         {this.altButton}
       </section>
     );
