@@ -26,7 +26,7 @@ class AuthForm extends React.Component{
   }
 
   handleDemo(e){
-    e.persist();
+    e.preventDefault();
     this.setState({username: 'Guest', password: 'password'}, () =>
       this.props.login(this.state));
   }

@@ -1,0 +1,17 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: whitesmoke;
+  padding: 20px;
+}
+
+.main-nav a {
+  padding: 0px 20px 0px 20px;
+}
+
+
+.main-nav img {
+  height: 30px;
+  width: auto;
+}

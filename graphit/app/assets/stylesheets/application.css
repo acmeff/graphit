@@ -25,6 +25,12 @@ body, h1, h2, section, div, form, ul, li, p {
   background: transparent;
 }
 
+#root{
+  display: block;
+  padding-bottom: 1000px;
+  height: 100%;
+}
+
 h1 {
   font-size: 30px;
   font-weight: 300;
@@ -37,6 +43,20 @@ button {
   font-size: 16px;
 }
 
+button:hover {
+  background-color: #dedede;
+}
+
+.button-link {
+  background-color: transparent;
+  color: black;
+}
+
+
+.button-link:hover{
+  background-color: transparent;
+}
+
 input {
   border: none;
   border-bottom: .5px solid #4a4a4a;
@@ -44,6 +64,16 @@ input {
 
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: 400;
+}
+
+.app {
+
 }
 
 .error {
