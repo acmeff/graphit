@@ -19,10 +19,10 @@ export const login = user => dispatch => (
 );
 
 export const logout = () => dispatch => (
-  APIUtil.logout().then(() => dispatch(receiveCurrentUser(null)),
-    errors => dispatch(receiveErrors(errors)))
+  APIUtil.logout().then(() => dispatch(receiveCurrentUser(null)))
 );
 
 export const signUp = user => dispatch => (
-  APIUtil.signUp(user).then(newUser => dispatch(receiveCurrentUser(newUser)))
+  APIUtil.signUp(user).then(newUser => dispatch(receiveCurrentUser(newUser)),
+    errors => dispatch(receiveErrors(errors)))
 );

@@ -17,7 +17,7 @@ class AuthForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault();
-    this.type(this.state).then(this.props.history.push('/graphs'));
+    this.type(this.state).then(() => this.props.history.push('/graphs'));
   }
 
   handleRedirect(e){
@@ -29,12 +29,10 @@ class AuthForm extends React.Component{
     if (this.props.location.pathname === '/signin'){
       this.type = this.props.login;
       this.typeDisplay = "Login";
-      this.altMessage = 'Not a member yet? Sign up here.';
       this.altButton = <button name='signup' onClick={this.handleRedirect}>Sign Up</button>;
     } else {
       this.type = this.props.signUp;
       this.typeDisplay = "Sign Up";
-      this.altMessage = 'Already a member? Log in here';
       this.altButton = <button name='signin' onClick={this.handleRedirect}>Login</button>;
     }
   }
