@@ -6,7 +6,7 @@ import AuthFormContainer from './session/auth_form_container';
 import GraphIndexContainer from './graphs/graph_index_container';
 
 const App = () => (
-  <section>
+  <section className='app'>
     <h5>App</h5>
     <AuthRoute path='/signup' component={AuthFormContainer}/>
     <AuthRoute path='/signin' component={AuthFormContainer}/>
