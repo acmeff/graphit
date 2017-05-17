@@ -11,9 +11,9 @@
 
 Graphit is an application inspired by Chartio. It is build using Ruby on Rails and React/Redux. Graphit will satisfy the following criteria by the end of Week 9, along with adequate styling, smooth navigation, and sufficient seed data:
 
-- [ ] New account creation, login, and guest/demo login
+- [x] New account creation, login, and guest/demo login
 - [ ] Production README
-- [ ] Hosting on Heroku
+- [x] Hosting on Heroku
 - [ ] Users can upload, save, and delete data tables
 - [ ] Users can create, save, and delete graphs
 - [ ] Users can share charts with other Users
