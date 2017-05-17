@@ -6,8 +6,6 @@ export const createTable = table => (
   })
 );
 
-
-
 export const deleteTable = table => (
   $.ajax({
     url: `api/tables/${table.id}`,

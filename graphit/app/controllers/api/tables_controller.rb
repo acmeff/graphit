@@ -11,7 +11,8 @@ class Api::TablesController < ApplicationController
 
   def destroy
     @table = Table.find(params[:id])
-    @table.destroy
+    @table = @table.destroy
+    render :show
   end
 
   def show
