@@ -5,8 +5,9 @@ class Nav extends React.Component {
   constructor(props){
     super(props);
 
-    this.handleButton(this.props.loggedIn);
+    this.handleButton = this.handleButton.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
+    this.handleButton(this.props.loggedIn);
   }
 
   componentWillReceiveProps(newProps){

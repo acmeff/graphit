@@ -1,0 +1,3 @@
+.tables-list>.table-li:nth-child(odd){
+  background-color: gray;
+}

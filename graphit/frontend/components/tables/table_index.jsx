@@ -8,9 +8,9 @@ class TableIndex extends React.Component{
   }
 
   render(){
-    const listItems = this.props.tables.map((table, idx) => <Link to={`/tables/${table.id}`}><li key={idx}>{table.title}</li></Link>);
+    const listItems = this.props.tables.map((table, idx) => <Link className="table-li" key={idx} to={`/tables/${table.id}`}><li>{table.title}</li></Link>);
     return(
-      <ul>
+      <ul className='tables-list'>
         {listItems}
       </ul>
     );
