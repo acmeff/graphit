@@ -14,12 +14,12 @@ class UploadTable extends React.Component{
   }
 
   handleDrop(files){
-    console.log(files);
     const file = files[0];
     Papa.parse(file, {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
+        this.display = `File added: ${file.name}`;
         this.setState({content: results.data});
       }
     });
@@ -45,13 +45,13 @@ class UploadTable extends React.Component{
                  placeholder='Title'
                  value={this.state.title}
                  onChange={this.handleChange}>
-
           </input>
           <button onClick={this.handleClick}>Save</button>
         </form>
         <DropToUpload onDrop={this.handleDrop} className='upload-box'>
           <h4>Drag & drop files here</h4>
-          <h5>{this.title}</h5>
+          <br/>
+          <h5>{this.display}</h5>
         </DropToUpload>
       </section>
     );

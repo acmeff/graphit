@@ -1,3 +1,4 @@
-.tables-list>.table-li:nth-child(odd){
-  background-color: gray;
+.tables-list li {
+  background-color: whitesmoke;
+  margin: 10px;
 }
