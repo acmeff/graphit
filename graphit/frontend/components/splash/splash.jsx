@@ -15,7 +15,9 @@ const Splash = () => (
         <Link to='/signup'><button>Sign Up</button></Link>
       </div>
     </section>
+    <section className="below-hero">
 
+    </section>
   </section>
 );
 

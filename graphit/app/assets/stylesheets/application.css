@@ -27,7 +27,6 @@ body, h1, h2, section, div, form, ul, li, p {
 
 #root{
   display: block;
-  padding-bottom: 1000px;
   height: 100%;
 }
 
