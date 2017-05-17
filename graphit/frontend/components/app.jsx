@@ -6,6 +6,7 @@ import AuthFormContainer from './session/auth_form_container';
 import GraphIndexContainer from './graphs/graph_index_container';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
+import UploadDataContainer from './data/upload_data_container';
 
 const App = () => (
   <section className='app'>
@@ -16,6 +17,7 @@ const App = () => (
     <AuthRoute path='/signup' component={AuthFormContainer}/>
     <AuthRoute path='/signin' component={AuthFormContainer}/>
     <ProtectedRoute path='/graphs' component={GraphIndexContainer}/>
+    <ProtectedRoute path='/new-data' component={UploadDataContainer}/>
   </section>
 );
 
