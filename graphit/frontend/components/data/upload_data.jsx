@@ -10,6 +10,13 @@ class UploadData extends React.Component{
 
   handleDrop(files){
     console.log(files);
+    const file = files[0];
+    Papa.parse(file, {
+      header: true,
+      dynamicTyping: true,
+      complete: (results) => console.log(results)
+  }
+);
   }
 
   render(){
