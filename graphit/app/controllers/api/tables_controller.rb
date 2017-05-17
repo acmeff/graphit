@@ -28,6 +28,6 @@ class Api::TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:content, :title)
+    params.require(:table).permit(:title, content: {})
   end
 end

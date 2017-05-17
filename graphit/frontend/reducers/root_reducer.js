@@ -1,11 +1,13 @@
 import SessionReducer from './session_reducer';
 import TablesReducer from './tables_reducer';
+import TableDetailReducer from './table_detail_reducer';
 
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
   session: SessionReducer,
-  table: TablesReducer
+  tables: TablesReducer,
+  tableDetail: TableDetailReducer
 });
 
 export default rootReducer;

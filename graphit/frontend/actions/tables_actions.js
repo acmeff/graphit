@@ -20,7 +20,11 @@ export const removeTable = table => ({
   table
 });
 
-export const createTable = table => ({
+export const addTable = table => ({
   type: CREATE_TABLE,
   table
 });
+
+export const createTable = table => dispatch => (
+  APIUtil.createTable(table).then(newTable => dispatch(addTable(newTable)))
+);
