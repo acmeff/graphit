@@ -7,7 +7,6 @@ import GraphIndexContainer from './graphs/graph_index_container';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
 import UploadTableContainer from './tables/upload_table_container';
-import TableDetailContainer from './tables/table_detail_container';
 import TableIndexContainer from './tables/table_index_container';
 
 const App = () => (
@@ -20,7 +19,7 @@ const App = () => (
     <AuthRoute path='/signin' component={AuthFormContainer}/>
     <ProtectedRoute path='/graphs' component={GraphIndexContainer}/>
     <ProtectedRoute path='/new-data' component={UploadTableContainer}/>
-    <ProtectedRoute path='/tables/:tableId' component={TableDetailContainer}/>
+
     <ProtectedRoute path='/tables' component={TableIndexContainer}/>
   </section>
 );

@@ -39,7 +39,8 @@ class UploadTable extends React.Component{
   render(){
     return(
       <section className='upload'>
-        <h1>Upload your data files</h1>
+        <h1>Upload your data file</h1>
+        <h4>(Accepted format: csv)</h4>
         <form>
           <input type='text'
                  placeholder='Title'
@@ -49,7 +50,7 @@ class UploadTable extends React.Component{
           <button onClick={this.handleClick}>Save</button>
         </form>
         <DropToUpload onDrop={this.handleDrop} className='upload-box'>
-          <h4>Drag & drop files here</h4>
+          <h4>Drag & drop file here</h4>
           <br/>
           <h5>{this.display}</h5>
         </DropToUpload>

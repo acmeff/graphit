@@ -2,3 +2,16 @@
   background-color: whitesmoke;
   margin: 10px;
 }
+
+.tables-list{
+  margin-top: 200px;
+}
+
+.tables-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.current-table {
+}

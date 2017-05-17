@@ -1,6 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { ProtectedRoute } from '../../util/route_util';
+
+import TableDetailContainer from './table_detail_container';
+
 class TableIndex extends React.Component{
 
   componentDidMount(){
@@ -16,9 +20,13 @@ class TableIndex extends React.Component{
     ));
 
     return(
-      <ul className='tables-list'>
-        {listItems}
-      </ul>
+      <section className='tables-section'>
+        <ProtectedRoute path='/tables/:tableId'
+                        component={TableDetailContainer}/>
+        <ul className='tables-list'>
+          {listItems}
+        </ul>
+      </section>
     );
   }
 }
