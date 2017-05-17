@@ -4,7 +4,7 @@
 
 [Trello Link][trello]
 
-[heroku]: https://ancient-taiga-42028.herokuapp.com/#/signin
+[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
 [trello]: https://trello.com/b/qANnL4xW/graphit
 
 ## Minimum Viable Product
