@@ -34,8 +34,8 @@ class TableDetail extends React.Component {
 
   render(){
     return(
-      <section>
-        <h1>{this.props.table.title}</h1>
+      <section className='table-detail'>
+        <h3>{this.props.table.title}</h3>
         <JsonTable rows={ this.props.content } columns={ this.props.columns } />
       </section>
 

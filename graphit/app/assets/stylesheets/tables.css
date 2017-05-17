@@ -3,8 +3,12 @@
   margin: 10px;
 }
 
+.tables-list li:hover{
+  background-color: gray;
+}
+
 .tables-list{
-  margin-top: 200px;
+  /*margin-top: 200px;*/
 }
 
 .tables-section{
@@ -14,4 +18,37 @@
 }
 
 .current-table {
+}
+
+.jsonHeader {
+  background-color: #79bba6;
+  font-weight: bold;
+  color: white;
+}
+
+.jsonTable {
+  font-size: 14px;
+  margin: 5px;
+}
+
+table {
+    display: table;
+    border-collapse: collapse;
+    border-spacing: 2px;
+    border-color: grey;
+    padding: 5px;
+}
+
+td {
+  text-align: center;
+}
+
+.table-detail{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+tbody tr:nth-child(odd){
+  background-color: #dedede;
 }

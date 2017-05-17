@@ -21,11 +21,12 @@ class TableIndex extends React.Component{
 
     return(
       <section className='tables-section'>
-        <ProtectedRoute path='/tables/:tableId'
-                        component={TableDetailContainer}/>
+        <h2>Available Data Sets</h2>
         <ul className='tables-list'>
           {listItems}
         </ul>
+        <ProtectedRoute path='/tables/:tableId'
+                        component={TableDetailContainer}/>
       </section>
     );
   }
