@@ -1,6 +1,7 @@
 class Api::TablesController < ApplicationController
   def create
     @table = Table.new(table_params)
+    @table.content = params[:table][:content]
     @table.owner_id = current_user.id
     if @table.save
       render :show
@@ -28,6 +29,6 @@ class Api::TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:title, content: {})
+    params.require(:table).permit(:title)
   end
 end

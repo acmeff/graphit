@@ -6,7 +6,11 @@ class UploadTable extends React.Component{
   constructor(props){
     super(props);
 
-    this.handleDrop =this.handleDrop.bind(this);
+    this.handleDrop = this.handleDrop.bind(this);
+    this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+
+    this.state = {title: '', content: null};
   }
 
   handleDrop(files){
@@ -16,20 +20,34 @@ class UploadTable extends React.Component{
       header: true,
       dynamicTyping: true,
       complete: (results) => {
-        console.log(results.data);
-        this.props.createTable(
-            {content: results.data,
-            title: file.name}
-          );
-        console.log(results);}
+        this.setState({content: results.data});
       }
-    );
+    });
+  }
+
+  handleChange(e){
+    this.setState({title: e.target.value});
+  }
+
+  handleClick(e){
+    e.preventDefault();
+    this.props.createTable(this.state)
+      .then((table) => this.props.history.push(`/tables/${table.id}`));
   }
 
   render(){
     return(
       <section>
         <h1>Upload your data files</h1>
+        <form>
+          <input type='text'
+                 placeholder='Title'
+                 value={this.state.title}
+                 onChange={this.handleChange}>
+
+          </input>
+          <button onClick={this.handleClick}>Save</button>
+        </form>
         <DropToUpload onDrop={this.handleDrop} className='upload-box'/>
       </section>
     );

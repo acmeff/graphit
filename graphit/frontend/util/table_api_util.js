@@ -13,9 +13,9 @@ export const deleteTable = table => (
   })
 );
 
-export const getTable = (table) => (
+export const getTable = (tableId) => (
   $.ajax({
-    url: `api/tables/${table.id}`,
+    url: `api/tables/${tableId}`,
     method: 'GET'
   })
 );

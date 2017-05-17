@@ -26,5 +26,17 @@ export const addTable = table => ({
 });
 
 export const createTable = table => dispatch => (
-  APIUtil.createTable(table).then(newTable => dispatch(addTable(newTable)))
+  APIUtil.createTable(table)
+    .then(newTable => {
+      dispatch(addTable(newTable));
+      return newTable;
+    })
+);
+
+export const getTable = tableId => dispatch => (
+  APIUtil.getTable(tableId).then(newTable => dispatch(receiveTable(newTable)))
+);
+
+export const getTables = () => dispatch => (
+  APIUtil.getTables().then(tables => dispatch(receiveTables(tables)))
 );
