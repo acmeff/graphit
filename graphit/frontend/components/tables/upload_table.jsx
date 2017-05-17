@@ -25,6 +25,7 @@ class UploadTable extends React.Component{
     });
   }
 
+
   handleChange(e){
     this.setState({title: e.target.value});
   }
@@ -37,7 +38,7 @@ class UploadTable extends React.Component{
 
   render(){
     return(
-      <section>
+      <section className='upload'>
         <h1>Upload your data files</h1>
         <form>
           <input type='text'
@@ -48,7 +49,10 @@ class UploadTable extends React.Component{
           </input>
           <button onClick={this.handleClick}>Save</button>
         </form>
-        <DropToUpload onDrop={this.handleDrop} className='upload-box'/>
+        <DropToUpload onDrop={this.handleDrop} className='upload-box'>
+          <h4>Drag & drop files here</h4>
+          <h5>{this.title}</h5>
+        </DropToUpload>
       </section>
     );
   }

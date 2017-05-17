@@ -10,8 +10,13 @@ class TableDetail extends React.Component {
     this.props.getTable(this.props.match.params.tableId);
   }
 
+  componentWillReceiveProps(newProps){
+    if (parseInt(newProps.match.params.tableId) !== this.props.table.id){
+      this.props.getTable(this.props.match.params.tableId);
+    }
+  }
+
   render(){
-    console.log(this.props.table.content);
     return(
       <section>
         {this.props.table.title}

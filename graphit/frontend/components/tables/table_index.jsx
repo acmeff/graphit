@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 
 class TableIndex extends React.Component{
 
@@ -8,8 +8,7 @@ class TableIndex extends React.Component{
   }
 
   render(){
-    console.log(this.props.tables);
-    const listItems = this.props.tables.map((table, idx) => <li key={idx}>{table.title}</li>);
+    const listItems = this.props.tables.map((table, idx) => <Link to={`/tables/${table.id}`}><li key={idx}>{table.title}</li></Link>);
     return(
       <ul>
         {listItems}
