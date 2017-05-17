@@ -1,7 +1,7 @@
 import React from 'react';
 import DropToUpload from 'react-drop-to-upload';
 
-class UploadData extends React.Component{
+class UploadTable extends React.Component{
   constructor(props){
     super(props);
 
@@ -32,4 +32,4 @@ class UploadData extends React.Component{
   }
 }
 
-export default UploadData;
+export default UploadTable;
