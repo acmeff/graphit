@@ -6,7 +6,7 @@ import AuthFormContainer from './session/auth_form_container';
 import GraphIndexContainer from './graphs/graph_index_container';
 import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
-import UploadTableContainer from './data/upload_table_container';
+import UploadTableContainer from './tables/upload_table_container';
 
 const App = () => (
   <section className='app'>
