@@ -60,6 +60,23 @@ button:hover {
   background-color: #dedede;
 }
 
+.delete-button{
+  background-color: transparent;
+}
+
+.delete-button img{
+  width: auto;
+  height: 100%;
+}
+
+.delete-button:hover{
+  background-color: transparent;
+}
+
+.delete-button img:hover{
+  background-color: white;
+}
+
 .button-link {
   background-color: transparent;
   color: black;

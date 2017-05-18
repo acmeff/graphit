@@ -11,7 +11,13 @@ const TableIndexList = ({tables, deleteTable}) => {
   ));
   return(
     <section className='table-detail'>
+
       <ul className='tables-list'>
+        <li id='table-list-header'>
+          <span>Title</span>
+          <span>Columns</span>
+          <span>Delete</span>
+        </li>
         {listItems}
       </ul>
     </section>

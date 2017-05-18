@@ -16,13 +16,14 @@ class TableIndexListItem extends React.Component {
   render(){
     return(
 
-      <li className="table-li">
-        <Link to={`/tables/${this.props.table.id}`}>
-            <span>{this.props.table.title}</span>
-            <span className='cols'>{this.props.table.columns}</span>
-        </Link>
-        <button onClick={this.handleDelete}>Delete</button>
-      </li>
+        <li className="table-li">
+          <Link to={`/tables/${this.props.table.id}`}>
+            <span className='item-title'>{this.props.table.title}</span>
+            <span className='cols'>{this.props.table.columns.join(',  ')}</span>
+          </Link>
+          <button className='delete-button' onClick={this.handleDelete}><img src='assets/icon-trash-can.png'></img></button>
+        </li>
+
     );
   }
 }
