@@ -1,4 +1,4 @@
-import { RECEIVE_TABLES, CREATE_TABLE, REMOVE_TABLE, RECEIVE_ERRORS }
+import { RECEIVE_TABLES, CREATE_TABLE, REMOVE_TABLE }
   from '../actions/tables_actions';
 import merge from 'lodash/merge';
 

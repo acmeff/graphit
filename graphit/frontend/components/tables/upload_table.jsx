@@ -13,6 +13,10 @@ class UploadTable extends React.Component{
     this.state = {title: '', content: null};
   }
 
+  componentDidMount(){
+    this.props.clearErrors();
+  }
+
   handleDrop(files){
     const file = files[0];
     Papa.parse(file, {
@@ -36,12 +40,21 @@ class UploadTable extends React.Component{
       .then((table) => this.props.history.push(`/tables/${table.id}`));
   }
 
+  renderErrors(){
+    if (this.props.errors){
+      return this.props.errors.map((error, idx) => (
+        <li key={idx} className='error'>{error}</li>
+      )
+    );}
+  }
+
   render(){
     return(
       <section className='upload scroll'>
         <h1>Upload your data file</h1>
         <h4>(Accepted format: csv)</h4>
         <form>
+          {this.renderErrors()}
           <input type='text'
                  placeholder='Title'
                  value={this.state.title}
