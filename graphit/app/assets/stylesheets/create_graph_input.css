@@ -1,0 +1,31 @@
+.graph-input-form{
+  display: flex;
+  flex-direction: column;
+}
+
+.graph-input-section{
+  flex: 2;
+  margin: 20px;
+}
+
+select {
+  width: 342px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: menulist;
+  font-weight: 200;
+  font-size: 18px;
+}
+
+
+option {
+    font-weight: normal;
+    display: block;
+    white-space: pre;
+    min-height: 1.2em;
+    padding: 0px 2px 1px;
+    margin: 10px 0px 10px 0px;
+}

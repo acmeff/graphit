@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CreateGraph from './create_graph';
+import CreateGraphInput from './create_graph_input';
 import { allTables } from '../../reducers/selectors';
 import { getTables } from '../../actions/tables_actions';
 
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => ({
   getTables: () => dispatch(getTables())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(CreateGraph);
+export default connect(mapStateToProps, mapDispatchToProps)(CreateGraphInput);
