@@ -20,7 +20,7 @@ const App = () => (
     <ProtectedRoute path='/graphs' component={GraphIndexContainer}/>
     <ProtectedRoute path='/new-data' component={UploadTableContainer}/>
 
-    <ProtectedRoute path='/tables' component={TableIndexContainer}/>
+    <ProtectedRoute path='/tables'component={TableIndexContainer}/>
   </section>
 );
 
