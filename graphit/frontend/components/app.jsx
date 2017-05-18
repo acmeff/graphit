@@ -8,6 +8,7 @@ import NavContainer from './nav/nav_container';
 import Splash from './splash/splash';
 import UploadTableContainer from './tables/upload_table_container';
 import TableIndexContainer from './tables/table_index_container';
+import CreateGraphContainer from './graphs/create_graph_container';
 
 const App = () => (
   <section className='app'>
@@ -21,6 +22,7 @@ const App = () => (
     <ProtectedRoute path='/new-data' component={UploadTableContainer}/>
 
     <ProtectedRoute path='/tables'component={TableIndexContainer}/>
+    <ProtectedRoute path='/new-graph' component={CreateGraphContainer}/>
   </section>
 );
 
