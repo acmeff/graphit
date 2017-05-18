@@ -5,7 +5,7 @@ import { ProtectedRoute } from '../../util/route_util';
 
 import TableDetailContainer from './table_detail_container';
 import TableIndexSidebar from './table_index_sidebar';
-import TableIndexList from './table_index_list';
+import TableIndexListContainer from './table_index_list_container';
 
 class TableIndex extends React.Component{
 
@@ -14,7 +14,12 @@ class TableIndex extends React.Component{
   }
 
   render(){
-
+    const listItems = this.props.tables.map((table, idx) => (
+      <Link key={idx}
+        to={`/tables/${table.id}`}>
+        <li className="side-li">{table.title}</li>
+      </Link>
+    ));
 
     return(
 
@@ -22,11 +27,13 @@ class TableIndex extends React.Component{
         <section className='tables-list-section'>
           <TableIndexSidebar/>
           <h3>Available Data Sets</h3>
-          <TableIndexList tables={this.props.tables}/>
+          <ul className='side-list'>
+            {listItems}
+          </ul>
         </section>
         <Switch>
           <Route path='/tables/:tableId' component={TableDetailContainer}/>
-          <Route component={()=><TableIndexList tables={this.props.tables}/>}/>
+          <Route component={TableIndexListContainer}/>
         </Switch>
       </section>
 

@@ -7,10 +7,25 @@
   border-radius: 10px;
 }
 
+.tables-list{
+  width: 100%;
+}
 .tables-list li:hover{
   background-color: gray;
 }
 
+.table-li{
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-li a{
+  display: flex;
+}
+
+.cols{
+  display: flex;
+}
 
 .tables-section{
   display: flex;

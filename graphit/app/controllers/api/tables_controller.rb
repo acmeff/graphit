@@ -2,7 +2,7 @@ class Api::TablesController < ApplicationController
   def create
     @table = Table.new(table_params)
     @table.content = params[:table][:content]
-    @table.owner_id = current_user.id
+    # @table.owner_id = current_user.id
     if @table.save
       render :show
     else

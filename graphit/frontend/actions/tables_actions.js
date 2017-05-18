@@ -49,3 +49,7 @@ export const getTable = tableId => dispatch => (
 export const getTables = () => dispatch => (
   APIUtil.getTables().then(tables => dispatch(receiveTables(tables)))
 );
+
+export const deleteTable = table => dispatch => (
+  APIUtil.deleteTable(table).then(oldTable => dispatch(removeTable(oldTable)))
+);
