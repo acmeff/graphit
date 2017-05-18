@@ -6,6 +6,7 @@ class TableDetail extends React.Component {
   constructor(props){
     super(props);
 
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   componentDidMount(){
@@ -16,6 +17,11 @@ class TableDetail extends React.Component {
     if (parseInt(newProps.match.params.tableId) !== this.props.table.id){
       this.props.getTable(this.props.match.params.tableId);
     }
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    this.props.deleteTable(this.props.table).then(this.props.history.push('/tables'));
   }
 
   render(){
