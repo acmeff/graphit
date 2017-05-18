@@ -1,6 +1,8 @@
-import { RECEIVE_TABLES, CREATE_TABLE, REMOVE_TABLE }
+import { RECEIVE_TABLES, CREATE_TABLE, REMOVE_TABLE, RECEIVE_ERRORS }
   from '../actions/tables_actions';
 import merge from 'lodash/merge';
+
+
 
 const TablesReducer = (state = {}, action) => {
   Object.freeze(state);

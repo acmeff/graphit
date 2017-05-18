@@ -25,6 +25,10 @@ body, h1, h2, section, div, form, ul, li, p {
   background: transparent;
 }
 
+html, body, .app{
+  height: 100%;
+}
+
 #root{
   display: block;
   height: 100%;
@@ -33,7 +37,17 @@ body, h1, h2, section, div, form, ul, li, p {
 h1 {
   font-size: 30px;
   font-weight: 300;
+
 }
+
+h2{
+  margin: 0;
+}
+
+h3{
+  margin: 0;
+}
+
 button {
   cursor: pointer;
   background-color: #79bba6;
@@ -51,6 +65,19 @@ button:hover {
   color: black;
 }
 
+.link-button{
+  cursor: pointer;
+  background-color: #79bba6;
+  color: white;
+  border: none;
+  font-size: 16px;
+  padding: 10px;
+}
+
+.link-button:hover{
+  background-color: #dedede;
+}
+
 
 .button-link:hover{
   background-color: transparent;
@@ -61,6 +88,8 @@ input {
   border-bottom: .5px solid #4a4a4a;
   border-radius: 10px;
   padding: 10px;
+  -webkit-appearance: none;
+  outline: none;
 }
 
 li {

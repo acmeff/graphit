@@ -1,5 +1,4 @@
 import React from 'react';
-import { Table, Column, Cell } from 'fixed-data-table';
 import  JsonTable  from 'react-json-table';
 
 class TableDetail extends React.Component {

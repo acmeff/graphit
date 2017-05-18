@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 
 import TableDetailContainer from './table_detail_container';
+import TableIndexSidebar from './table_index_sidebar';
 
 class TableIndex extends React.Component{
 
@@ -20,14 +21,19 @@ class TableIndex extends React.Component{
     ));
 
     return(
+
       <section className='tables-section'>
-        <h2>Available Data Sets</h2>
-        <ul className='tables-list'>
-          {listItems}
-        </ul>
+        <section className='tables-list-section'>
+          <TableIndexSidebar/>
+          <h3>Available Data Sets</h3>
+          <ul className='tables-list'>
+            {listItems}
+          </ul>
+        </section>
         <ProtectedRoute path='/tables/:tableId'
                         component={TableDetailContainer}/>
       </section>
+
     );
   }
 }

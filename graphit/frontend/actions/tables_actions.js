@@ -4,6 +4,7 @@ export const RECEIVE_TABLE = 'RECEIVE_TABLE';
 export const RECEIVE_TABLES = 'RECEIVE_TABLES';
 export const REMOVE_TABLE = 'REMOVE_TABLE';
 export const CREATE_TABLE = 'CREATE_TABLE';
+export const RECEIVE_ERRORS = 'RECEIVE_ERRORS';
 
 export const receiveTable = table => ({
   type: RECEIVE_TABLE,
@@ -25,12 +26,20 @@ export const addTable = table => ({
   table
 });
 
+export const receiveErrors = errors => ({
+  type: RECEIVE_ERRORS,
+  errors
+});
+
 export const createTable = table => dispatch => (
   APIUtil.createTable(table)
-    .then(newTable => {
+    .then(
+      newTable => {
       dispatch(addTable(newTable));
       return newTable;
-    })
+      },
+      errors => dispatch(receiveErrors(errors))
+    )
 );
 
 export const getTable = tableId => dispatch => (
