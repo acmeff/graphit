@@ -38,7 +38,7 @@ class UploadTable extends React.Component{
 
   render(){
     return(
-      <section className='upload'>
+      <section className='upload scroll'>
         <h1>Upload your data file</h1>
         <h4>(Accepted format: csv)</h4>
         <form>

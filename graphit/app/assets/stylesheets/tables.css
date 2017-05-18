@@ -75,6 +75,7 @@ table {
     border-color: grey;
     padding: 5px;
     max-width: 70%;
+    min-width: 60%;
 }
 
 td {
@@ -98,14 +99,13 @@ tbody tr:nth-child(odd){
   flex: 1;
   height: 100%;
   background-color: whitesmoke;
+  position: fixed;
+  left: 0;
+  top: 80px;
 }
 
 .table-index-sidebar{
   margin-left: 10px;
-}
-
-.table-index-sidebar *{
-  /*margin-bottom: 50px;*/
 }
 
 .table-index-sidebar h2{
@@ -120,9 +120,14 @@ tbody tr:nth-child(odd){
   padding-left: 10px;
 }
 
+.table-index-sidebar li{
+  padding-bottom: 10px;
+}
+
 .table-index-sidebar ul li:hover{
   font-size: 18px;
 }
+
 .table-index-sidebar h3:hover{
   font-size: 20px;
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Splash = () => (
-  <section className='splash'>
+  <section className='splash scroll'>
     <img src='assets/splash-chart.jpg'className='splash-chart'></img>
     <section className='hero'>
 

@@ -127,3 +127,13 @@ a {
 .error {
   color: #bb8579;
 }
+
+.scroll{
+  padding-top: 80px;
+
+}
+
+.scroll-sidebar{
+    padding-top: 80px;
+    padding-left: 170px;
+}

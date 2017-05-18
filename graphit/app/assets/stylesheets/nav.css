@@ -4,10 +4,16 @@
   align-items: center;
   background-color: #acd5c8;
   padding: 20px;
+  position: fixed;
+  width: 100%;
 }
 
 .main-nav a {
   padding: 0px 20px 0px 20px;
+}
+
+.main-nav ul{
+  margin-right: 50px;
 }
 
 

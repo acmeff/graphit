@@ -66,7 +66,7 @@ class AuthForm extends React.Component{
   render(){
     this.authType();
     return(
-      <section className='auth-comp'>
+      <section className='auth-comp scroll'>
         <form className='auth-form'>
           <h1>Welcome to Graphit</h1>
           {this.message}

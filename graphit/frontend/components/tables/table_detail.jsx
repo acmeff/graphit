@@ -26,7 +26,7 @@ class TableDetail extends React.Component {
 
   render(){
     return(
-      <section className='table-detail'>
+      <section className='table-detail scroll-sidebar'>
         <nav>
           <Link to='/tables'>X</Link>
         </nav>

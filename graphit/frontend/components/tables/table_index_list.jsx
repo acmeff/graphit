@@ -10,7 +10,7 @@ const TableIndexList = ({tables, deleteTable}) => {
                         key={idx}/>
   ));
   return(
-    <section className='table-detail'>
+    <section className='table-detail scroll-sidebar'>
 
       <ul className='tables-list'>
         <li id='table-list-header'>
