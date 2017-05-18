@@ -21,8 +21,8 @@ class TableIndex extends React.Component{
       <section className='tables-section'>
         <section className='tables-list-section'>
           <TableIndexSidebar tables={this.props.tables}/>
-
         </section>
+
         <Switch>
           <Route path='/tables/:tableId' component={TableDetailContainer}/>
           <Route component={TableIndexListContainer}/>

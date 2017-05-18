@@ -71,8 +71,6 @@
 }
 
 table {
-    display: block;
-    border-collapse: collapse;
     border-spacing: 2px;
     border-color: grey;
     padding: 5px;
@@ -87,7 +85,7 @@ td {
 .table-detail{
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   flex: 3;
 }
 
@@ -127,4 +125,15 @@ tbody tr:nth-child(odd){
 }
 .table-index-sidebar h3:hover{
   font-size: 20px;
+}
+
+.table-detail nav{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table-detail nav a{
+  padding: 10px;
+  font-size: 28px;
 }
