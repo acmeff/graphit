@@ -4,7 +4,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {type: 'line'};
+    this.state = {type: 'line', xType: 'category'};
 
     this.generateLineGraph = this.generateLineGraph.bind(this);
   }
@@ -40,14 +40,14 @@ class Preview extends React.Component{
     this.chart = c3.generate({
       bindto: '#preview',
       data: {
-        type: 'area-spline',
+        type: this.state.type,
         columns: [
             columns
         ]
       },
       axis: {
         x: {
-            type: 'category',
+            type: this.state.xType,
             categories: categories
         }
       }
