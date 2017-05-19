@@ -5,7 +5,7 @@ class CreateGraphInput extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {table: '', x: -1, y: -1, y2: -1, axisOpts: [], tableId: 0};
+    this.state = {table: '', x: -1, y: -1, y2: -1, y3: -1, axisOpts: [], tableId: 0};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
@@ -78,6 +78,12 @@ class CreateGraphInput extends React.Component{
               <option default disabled>Data</option>
               {this.state.axisOpts}
             </select>
+            <select name='y3-select'
+              onChange={this.handleChange('y3')}
+              value={this.state.y3}>
+              <option default disabled>Data</option>
+              {this.state.axisOpts}
+            </select>
             <button onClick={this.runData}>Run</button>
           </form>
         </section>
@@ -85,7 +91,8 @@ class CreateGraphInput extends React.Component{
         <PreviewContainer tableId={this.state.tableId}
                           x={this.state.x}
                           y={this.state.y}
-                          y2={this.state.y2}/>
+                          y2={this.state.y2}
+                          y3={this.state.y3}/>
       </section>
     );
 

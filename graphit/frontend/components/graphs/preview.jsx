@@ -9,6 +9,7 @@ class Preview extends React.Component{
     this.generateLineGraph = this.generateLineGraph.bind(this);
     this.handleType = this.handleType.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
+    this.populateColumns = this.populateColumns.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -21,34 +22,36 @@ class Preview extends React.Component{
   componentDidUpdate(){
     if (Object.keys(this.props.table).length !== 0
           && this.props.x >= 0
-          && this.props.y >= 0
-          && this.props.y2 >= 0){
+          && this.props.y >= 0){
       this.generateLineGraph();
     }
   }
 
+  populateColumns(yData){
+    console.log(yData);
+    yData = yData.filter(y => y !== undefined);
+    this.columns = yData.map(y => {
+      let data = this.props.table.columns[y];
+
+      let column = this.props.tableContent.map(row => parseInt(row[data]));
+      column.unshift(data);
+      return column;
+    });
+
+    console.log(this.columns);
+  }
+
+  populateAttributes(){
+    console.log("popatts");
+    this.populateColumns([this.props.y, this.props.y2, this.props.y3]);
+
+    this.type = this.props.table.columns[this.props.x];
+    this.categories = this.props.tableContent.map(row => row[this.type]);
+  }
 
 
   generateLineGraph(){
-    console.log(this.props);
-    console.log(this.props.table.columns[this.props.x]);
-    const data1 = this.props.table.columns[this.props.y];
-    const data2 = this.props.table.columns[this.props.y2];
-    const type = this.props.table.columns[this.props.x];
-    const categories = this.props.tableContent.map(row => row[type]);
-    let column1 = this.props.tableContent.map(row => parseInt(row[data1]));
-
-    column1.unshift(data1);
-
-    column1.pop();
-
-    let column2 = this.props.tableContent.map(row => parseInt(row[data2]));
-
-    column2.unshift(data2);
-    column2.pop();
-
-    const columns = [column1, column2];
-    // debugger
+    this.populateAttributes();
 
     this.chart = c3.generate({
       bindto: '#preview',
@@ -58,12 +61,12 @@ class Preview extends React.Component{
       },
       data: {
         type: this.state.type,
-        columns: columns
+        columns: this.columns
       },
       axis: {
         x: {
             type: this.state.xType,
-            categories: categories,
+            categories: this.categories,
             height: 100,
             tick: {
               rotate: 60,
