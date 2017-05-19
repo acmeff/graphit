@@ -61,7 +61,10 @@ class Preview extends React.Component{
       },
       data: {
         type: this.state.type,
-        columns: this.columns
+        columns: this.columns,
+      },
+      color: {
+        pattern: ['#3bd7f9', '#f93b77', '#f9bd3b']
       },
       axis: {
         x: {
