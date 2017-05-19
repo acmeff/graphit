@@ -4,35 +4,50 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.generateChart = this.generateChart.bind(this);
+    this.generateLineGraph = this.generateLineGraph.bind(this);
   }
 
   componentWillReceiveProps(newProps){
     if (newProps.tableId !== this.props.tableId){
-      this.props.getTable(newProps.tableId).then(()=> this.generateChart());
+      this.props.getTable(newProps.tableId);
     }
   }
 
 
   componentDidUpdate(){
-    if (Object.keys(this.props.table).length !== 0){
-      this.generateChart();
+    if (Object.keys(this.props.table).length !== 0
+          && this.props.x >= 0
+          && this.props.y >= 0){
+      this.generateLineGraph();
     }
   }
 
 
 
-  generateChart(){
+  generateLineGraph(){
+    console.log(this.props);
+    console.log(this.props.table.columns[this.props.x]);
+    const data = this.props.table.columns[this.props.y];
+    const type = this.props.table.columns[this.props.x];
+    const categories = this.props.tableContent.map(row => row[type]);
+    let columns = this.props.tableContent.map(row => parseInt(row[data]));
+    columns.unshift(data);
+    columns.pop();
+    debugger
+
     this.chart = c3.generate({
       bindto: '#preview',
       data: {
-          json: this.props.tableContent,
-          keys: {value: [this.props.table.columns[this.props.x], this.props.table.columns[this.props.y]]}
-        },
-        axis: {
-          x: {type: this.props.table.columns[this.props.x]},
-          y: {type: this.props.table.columns[this.props.y]}
-        }
+          columns: [
+              columns
+          ]
+      },
+      axis: {
+          x: {
+              type: 'category',
+              categories: categories
+          }
+      }
     });
   }
 

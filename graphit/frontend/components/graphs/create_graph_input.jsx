@@ -5,7 +5,7 @@ class CreateGraphInput extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {table: '', x: 0, y: 0, axisOpts: [], tableId: 0};
+    this.state = {table: '', x: -1, y: -1, axisOpts: [], tableId: 0};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
