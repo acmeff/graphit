@@ -1,6 +1,28 @@
 .preview{
-  flex: 3;
+  border: 2px dotted #bbbbbb;
+  height: 600px;
+}
+
+.preview-container{
+  flex: 5;
   margin: 20px;
-  /*border: 2px dotted black;*/
-  height: 400px;
+}
+
+
+.type-opts{
+  text-align: center;
+}
+
+
+.title-input{
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.preview-container button{
+  margin: 15px;
+}
+
+rect {
+  color: pink;
 }

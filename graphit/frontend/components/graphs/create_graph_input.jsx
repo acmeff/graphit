@@ -5,7 +5,7 @@ class CreateGraphInput extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {table: '', x: -1, y: -1, axisOpts: [], tableId: 0};
+    this.state = {table: '', x: -1, y: -1, y2: -1, axisOpts: [], tableId: 0};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
@@ -50,31 +50,42 @@ class CreateGraphInput extends React.Component{
   render(){
     return(
       <section className='graph-input-section'>
-        <form className='graph-input-form'>
-          <select name='table-select'
-                  onChange={this.handleChange('table')}
-                  value={this.state.table}>
-            <option default disabled>Choose a Data Set</option>
-            {this.generateTableOptions()}
-          </select>
-          <select name='x-select'
-                  onChange={this.handleChange('x')}
-                  value={this.state.x}>
-            <option default disabled>X-Axis</option>
-            {this.state.axisOpts}
-          </select>
-          <select name='y-select'
-                  onChange={this.handleChange('y')}
-                  value={this.state.y}>
-            <option default disabled>Y-Axis</option>
-            {this.state.axisOpts}
-          </select>
-          <button onClick={this.runData}>Run</button>
-        </form>
+        <section className='graph-input-form-section'>
+          <h2>Create a Graph</h2>
+          <form className='graph-input-form'>
+            <h3>Select what data to include in your new graph</h3>
+            <select name='table-select'
+              onChange={this.handleChange('table')}
+              value={this.state.table}>
+              <option default disabled>Choose a Data Set</option>
+              {this.generateTableOptions()}
+            </select>
+            <select name='x-select'
+              onChange={this.handleChange('x')}
+              value={this.state.x}>
+              <option default disabled>X-Axis</option>
+              {this.state.axisOpts}
+            </select>
+            <select name='y-select'
+              onChange={this.handleChange('y')}
+              value={this.state.y}>
+              <option default disabled>Data</option>
+              {this.state.axisOpts}
+            </select>
+            <select name='y2-select'
+              onChange={this.handleChange('y2')}
+              value={this.state.y2}>
+              <option default disabled>Data</option>
+              {this.state.axisOpts}
+            </select>
+            <button onClick={this.runData}>Run</button>
+          </form>
+        </section>
 
         <PreviewContainer tableId={this.state.tableId}
                           x={this.state.x}
-                          y={this.state.y}/>
+                          y={this.state.y}
+                          y2={this.state.y2}/>
       </section>
     );
 

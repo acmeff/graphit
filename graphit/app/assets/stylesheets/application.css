@@ -104,7 +104,6 @@ button:hover {
 input {
   border: none;
   border-bottom: .5px solid #4a4a4a;
-  border-radius: 10px;
   padding: 10px;
   -webkit-appearance: none;
   outline: none;
