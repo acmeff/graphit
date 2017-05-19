@@ -1,11 +1,11 @@
 import React from 'react';
-import Preview from './preview';
+import PreviewContainer from './preview_container';
 
 class CreateGraphInput extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {table: '', x: '', y: '', axisOpts: []};
+    this.state = {table: '', x: 0, y: 0, axisOpts: [], tableId: 0};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
@@ -35,8 +35,8 @@ class CreateGraphInput extends React.Component{
     if (property === 'table'){
       return e => {
         const tableIdx = e.target.value;
-        this.setState({[property]: tableIdx},
-        () => this.generateAxisOptions(tableIdx));
+        this.setState({[property]: tableIdx, tableId: this.props.tables[tableIdx].id},
+          () => this.generateAxisOptions(tableIdx));
       };
     } else {
       return e => this.setState({[property]: e.target.value});
@@ -71,6 +71,10 @@ class CreateGraphInput extends React.Component{
           </select>
           <button onClick={this.runData}>Run</button>
         </form>
+
+        <PreviewContainer tableId={this.state.tableId}
+                          x={this.state.x}
+                          y={this.state.y}/>
       </section>
     );
 
