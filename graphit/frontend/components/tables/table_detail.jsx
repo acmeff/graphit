@@ -26,16 +26,21 @@ class TableDetail extends React.Component {
 
   render(){
     return(
-      <section className='table-detail scroll-sidebar'>
-        <nav>
-          <Link to='/tables'>X</Link>
-        </nav>
-        <h3>{this.props.table.title}</h3>
-        <JsonTable rows={ this.props.content } columns={ this.props.columns } />
-          <nav>
+
+        <section className='table-detail scroll-sidebar'>
+          <nav className='top'>
+            <p className='invisible'>''</p>
+            <h3>{this.props.table.title}</h3>
+            <Link to='/tables'>X</Link>
+          </nav>
+          <div className='table-div'>
+            <JsonTable rows={ this.props.content } columns={ this.props.columns } />
+          </div>
+          <nav className='bottom'>
             <button className='delete-button' onClick={this.handleDelete}><img src='assets/icon-trash-can.png'></img></button>
           </nav>
-      </section>
+        </section>
+
 
     );
   }

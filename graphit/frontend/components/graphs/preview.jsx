@@ -4,6 +4,8 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
+    this.state = {type: 'line'};
+
     this.generateLineGraph = this.generateLineGraph.bind(this);
   }
 
@@ -33,20 +35,21 @@ class Preview extends React.Component{
     let columns = this.props.tableContent.map(row => parseInt(row[data]));
     columns.unshift(data);
     columns.pop();
-    debugger
+    // debugger
 
     this.chart = c3.generate({
       bindto: '#preview',
       data: {
-          columns: [
-              columns
-          ]
+        type: 'area-spline',
+        columns: [
+            columns
+        ]
       },
       axis: {
-          x: {
-              type: 'category',
-              categories: categories
-          }
+        x: {
+            type: 'category',
+            categories: categories
+        }
       }
     });
   }

@@ -1,5 +1,6 @@
 .preview{
   flex: 3;
   margin: 20px;
-  border: 2px dotted black;
+  /*border: 2px dotted black;*/
+  height: 400px;
 }

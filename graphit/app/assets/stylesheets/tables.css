@@ -52,10 +52,10 @@
 }
 
 .tables-section{
-  display: flex;
+  /*display: flex;
   flex-direction: row;
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: flex-start;*/
   height: 100%;
 }
 
@@ -71,11 +71,19 @@
 }
 
 table {
+    /*display: block;*/
     border-spacing: 2px;
     border-color: grey;
     padding: 5px;
-    max-width: 70%;
-    min-width: 60%;
+    min-width: 100%;
+}
+
+.table-div{
+  max-width: 90%;
+  min-width: 60%;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  text-align: center;
 }
 
 td {
@@ -87,12 +95,16 @@ td {
   display: flex;
   flex-direction: column;
   align-items: center;
-  flex: 3;
+  /*max-width: 1000px;*/
+  /*flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 9;*/
 }
 
 tbody tr:nth-child(odd){
   background-color: #dedede;
 }
+
 
 .tables-list-section{
   text-align: left;
@@ -133,13 +145,34 @@ tbody tr:nth-child(odd){
   font-size: 20px;
 }
 
-.table-detail nav{
-  width: 100%;
+.table-detail nav {
+
+}
+
+.table-detail .top{
+  position: fixed;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-around;
+  width: 90%;
+  top: 80px;
+  left: 180px;
+  background: whitesmoke;
+  height: 50px;
+}
+
+.table-detail .bottom{
+  bottom: 0px;
+  left: 190px;
+  background: white;
+  width: 50px;
+}
+
+.invisible{
+  color: whitesmoke;
 }
 
 .table-detail nav a{
-  padding: 10px;
-  font-size: 28px;
+  padding: 0px;
+  font-size: 20px;
 }
