@@ -55,6 +55,7 @@ button {
   border: none;
   font-size: 16px;
   outline: none;
+  box-shadow: 2px 2px #dedede;
 }
 
 button:hover {
@@ -63,6 +64,7 @@ button:hover {
 
 .delete-button{
   background-color: transparent;
+  box-shadow: none;
 }
 
 .delete-button img{
@@ -81,6 +83,7 @@ button:hover {
 .button-link {
   background-color: transparent;
   color: black;
+  box-shadow: none;
 }
 
 .link-button{
@@ -90,6 +93,7 @@ button:hover {
   border: none;
   font-size: 16px;
   padding: 10px;
+  box-shadow:  2px 2px #dedede;
 }
 
 .link-button:hover{

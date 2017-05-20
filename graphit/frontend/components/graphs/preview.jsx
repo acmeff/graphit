@@ -4,7 +4,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {type: 'line', xType: 'category', title: ''};
+    this.state = {type: 'bar', xType: 'category', title: ''};
 
     this.generateLineGraph = this.generateLineGraph.bind(this);
     this.handleType = this.handleType.bind(this);
@@ -28,7 +28,6 @@ class Preview extends React.Component{
   }
 
   populateColumns(yData){
-    console.log(yData);
     yData = yData.filter(y => y !== undefined);
     this.columns = yData.map(y => {
       let data = this.props.table.columns[y];
@@ -37,12 +36,9 @@ class Preview extends React.Component{
       column.unshift(data);
       return column;
     });
-
-    console.log(this.columns);
   }
 
   populateAttributes(){
-    console.log("popatts");
     this.populateColumns([this.props.y, this.props.y2, this.props.y3]);
 
     this.type = this.props.table.columns[this.props.x];
@@ -64,7 +60,7 @@ class Preview extends React.Component{
         columns: this.columns,
       },
       color: {
-        pattern: ['#3bd7f9', '#f93b77', '#f9bd3b']
+        pattern: ['#3ba8f9', '#f18e43', '#a679bb']
       },
       axis: {
         x: {
@@ -92,13 +88,16 @@ class Preview extends React.Component{
   render(){
     return(
       <section className='preview-container'>
-        <input type='text'
-               onChange={this.handleTitle}
-               placeholder='Title'
-               value={this.state.title}
-               className='title-input'>
+        <header className='preview-header'>
+          <input type='text'
+            onChange={this.handleTitle}
+            placeholder='Title'
+            value={this.state.title}
+            className='title-input'>
 
-        </input>
+          </input>
+          <button>Save</button>
+        </header>
 
         <section className='preview' id="preview"></section>
         <ul className='type-opts'>

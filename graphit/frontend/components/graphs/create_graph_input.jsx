@@ -10,7 +10,6 @@ class CreateGraphInput extends React.Component{
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
     this.handleChange = this.handleChange.bind(this);
-    this.runData = this.runData.bind(this);
   }
 
   componentDidMount(){
@@ -43,9 +42,6 @@ class CreateGraphInput extends React.Component{
     }
   }
 
-  runData(e){
-    e.preventDefault();
-  }
 
   render(){
     return(
@@ -84,7 +80,6 @@ class CreateGraphInput extends React.Component{
               <option default disabled>Data</option>
               {this.state.axisOpts}
             </select>
-            <button onClick={this.runData}>Run</button>
           </form>
         </section>
 

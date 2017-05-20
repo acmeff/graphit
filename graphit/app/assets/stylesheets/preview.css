@@ -23,6 +23,7 @@
   margin: 15px;
 }
 
-rect {
-  color: pink;
+.preview-header{
+  display: flex;
+  justify-content: space-between;
 }
