@@ -29,6 +29,6 @@ class Api::TablesController < ApplicationController
   private
 
   def table_params
-    params.require(:table).permit(:title)
+    params.require(:table).permit(:title, :format)
   end
 end

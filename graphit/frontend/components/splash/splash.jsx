@@ -1,24 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SplashLoggedOut from './splash_logged_out';
+import SplashLoggedIn from './splash_logged_in';
+import Canvas from './canvas';
 
-const Splash = () => (
-  <section className='splash scroll'>
-    <img src='assets/splash-chart.jpg'className='splash-chart'></img>
-    <section className='hero'>
+class Splash extends React.Component {
+  constructor(props){
+    super(props);
 
-      <div className='hero-text'>
-        <h1>It's your data, just prettier.</h1>
-        <h2>Sign up now to start turning all of your data into  graphs.</h2>
-      </div>
-      <div className='hero-buttons'>
-        <Link to='/signin'><button>Log In</button></Link>
-        <Link to='/signup'><button>Sign Up</button></Link>
-      </div>
-    </section>
-    <section className="below-hero">
+  }
 
-    </section>
-  </section>
-);
+  renderText(){
+    if (this.props.loggedIn){
+      return <SplashLoggedIn/>;
+    } else {
+      return <SplashLoggedOut/>;
+    }
+  }
+
+  render(){
+    return (
+      <section className='splash'><Canvas/>
+        {this.renderText()}
+
+      </section>
+    );
+  }
+}
 
 export default Splash;

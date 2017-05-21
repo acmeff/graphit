@@ -10,7 +10,7 @@ class UploadTable extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
 
-    this.state = {title: '', content: null};
+    this.state = {title: '', content: null, format: ''};
   }
 
   componentDidMount(){
@@ -19,12 +19,13 @@ class UploadTable extends React.Component{
 
   handleDrop(files){
     const file = files[0];
+    console.log(file);
     Papa.parse(file, {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
         this.display = `File added: ${file.name}`;
-        this.setState({content: results.data});
+        this.setState({content: results.data, format: file.name.slice(file.name.length-3)});
       }
     });
   }
