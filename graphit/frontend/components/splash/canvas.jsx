@@ -39,9 +39,9 @@ class Canvas extends React.Component{
       this.purp.fillStyle= "#a679bb";
       this.purp.strokeStyle = "#a679bb";
       this.xStartP = 100;
-      this.yStartP = 400;
+      this.yStartP = 300;
       this.xP = 100;
-      this.yP = 400;
+      this.yP = 300;
       this.clearPurp = setInterval(this.incrementPurpUpRight, 1);
     }
 
@@ -59,14 +59,14 @@ class Canvas extends React.Component{
         clearInterval(this.clearHeight);
       } else {
         this.h ++;
-        this.orange.fillRect(150, 250, 60, this.h);
-        this.orange.fillRect(250, 285, 60, this.h);
-        this.orange.fillRect(350, 210, 60, this.h);
-        this.orange.fillRect(450, 390, 60, this.h);
-        this.orange.fillRect(550, 275, 60, this.h);
-        this.orange.fillRect(650, 395, 60, this.h);
-        this.orange.fillRect(750, 220, 60, this.h);
-        this.orange.fillRect(850, 300, 60, this.h);
+        this.orange.fillRect(125, 250, 50, this.h);
+        this.orange.fillRect(225, 285, 50, this.h);
+        this.orange.fillRect(325, 210, 50, this.h);
+        this.orange.fillRect(425, 390, 50, this.h);
+        this.orange.fillRect(525, 275, 50, this.h);
+        this.orange.fillRect(625, 395, 50, this.h);
+        this.orange.fillRect(725, 220, 50, this.h);
+        this.orange.fillRect(825, 300, 50, this.h);
         this.render();
       }
     }
