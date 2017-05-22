@@ -8,6 +8,7 @@ class Share extends React.Component{
 
     this.handleInput = this.handleInput.bind(this);
     this.renderResults = this.renderResults.bind(this);
+    this.handleShare = this.handleShare.bind(this);
   }
 
   componentDidMount(){
@@ -15,17 +16,27 @@ class Share extends React.Component{
   }
 
   handleInput(e){
-    this.setState({name: e.target.value}, () => this.renderResults());
+    this.setState({name: e.target.value}, () => {
+      if (this.state.name.length >= 3){
+        this.renderResults();
+      }
+    });
+  }
+
+  handleShare(e){
+    e.preventDefault();
+    this.props.createShare({user_id: this.props.users[this.state.name].id,
+                            graph_id: this.props.match.params.graphId});
   }
 
   renderResults(){
-    if (this.state.name in this.props.users){
-      this.setState({results:this.props.users[this.state.name]}) ;
-    }
+    let results = Object.keys(this.props.users).filter(user => (
+      user.includes(this.state.name)
+    ));
+    this.setState({results});
   }
 
   render(){
-    console.log(this.state.results);
     return(
       <section className='scroll-sidebar share'>
         <h1>SHARE</h1>
@@ -35,9 +46,10 @@ class Share extends React.Component{
         </input>
         <section id="results">
           <ul>
-            {this.state.results.username}
+            {this.state.results}
           </ul>
         </section>
+        <button onClick={this.handleShare}>Share</button>
       </section>
     );
   }

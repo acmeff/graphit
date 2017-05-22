@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getUsers } from '../../actions/shares_actions';
+import { getUsers, createShare } from '../../actions/shares_actions';
 
 import Share from './share';
 
@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getUsers: () => dispatch(getUsers())
+  getUsers: () => dispatch(getUsers()),
+  createShare: share => dispatch(createShare(share))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Share);

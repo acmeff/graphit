@@ -1,7 +1,8 @@
 class Api::SharesController < ApplicationController
   def create
     @share = Share.new(share_params)
-    if @share
+    if @share.save
+      @graph = Graph.find(params[:share][:graph_id])
       render 'api/graphs/show'
     else
       render json: @share.errors.full_messages, status: 422
@@ -19,7 +20,7 @@ class Api::SharesController < ApplicationController
 
   private
 
-  def user_params
+  def share_params
     params.require(:share).permit(:user_id, :graph_id)
   end
 end
