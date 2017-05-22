@@ -19,3 +19,11 @@ export const getShares = () => (
     method: 'GET'
   })
 );
+
+
+export const getUsers = () => (
+  $.ajax({
+    url: `api/users`,
+    method: 'GET'
+  })
+);

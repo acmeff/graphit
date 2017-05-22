@@ -1,10 +1,19 @@
 import React from 'react';
 
 class Share extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  
+
 
   render(){
     return(
-      <h1 className='scroll-sidebar'>SHARE</h1>
+      <section className='scroll-sidebar'>
+        <h1>SHARE</h1>
+        <input type='text'></input>
+      </section>
     );
   }
 }
