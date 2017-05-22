@@ -11,14 +11,17 @@ const TableIndexList = ({tables, deleteTable}) => {
   ));
   return(
     <section className='table-detail scroll-sidebar'>
-
       <ul className='tables-list'>
-        <li id='table-list-header'>
-          <span>Title</span>
-          <span>Columns</span>
-          <span>Delete</span>
-        </li>
-        {listItems}
+        <nav className='top'>
+          <li id='table-list-header'>
+            <span id='title'>Title</span>
+            <span id='cols'>Columns</span>
+            <span id='del'>Delete</span>
+          </li>
+        </nav>
+        <ul className='list-items'>
+          {listItems}
+        </ul>
       </ul>
     </section>
   );

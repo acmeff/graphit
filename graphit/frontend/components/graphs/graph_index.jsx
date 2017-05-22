@@ -1,11 +1,30 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import GraphIndexSidebar from './graph_index_sidebar';
+import GraphsListContainer from './graphs_list_container';
 
-const GraphIndex = () => (
-  <section className='scroll'>
-    <h1>All the pretty graphs</h1>
-    <Link to='/new-graph' className='link-button'>New Graph</Link>
-  </section>
-);
+class GraphIndex extends React.Component{
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.props.getGraphs();
+  }
+
+  render(){
+    const graphsList = this.props.graphs.map((graph, idx) => (
+      <li key={idx}>{graph.title}</li>
+    ));
+
+    return(
+      <section className='graph-index'>
+
+        <GraphIndexSidebar graphs={this.props.graphs}/>
+        <Route component={GraphsListContainer}/>
+      </section>
+    );
+  }
+}
 
 export default GraphIndex;

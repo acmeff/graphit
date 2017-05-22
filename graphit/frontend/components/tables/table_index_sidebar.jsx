@@ -10,7 +10,7 @@ const TableIndexSidebar = (props) => {
   ));
 
   return (
-    <section className='table-index-sidebar'>
+    <section className='index-sidebar'>
       <h2>Your Data Sets</h2>
       <Link className='link-button' to='/new-data'>Add a new table</Link>
       <h3><Link to='/tables'>All Data Sets</Link></h3>

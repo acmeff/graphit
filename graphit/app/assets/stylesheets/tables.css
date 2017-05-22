@@ -28,6 +28,27 @@
 
 #table-list-header{
   background-color: transparent;
+  margin-top: 20px;
+}
+
+.list-items{
+  margin-top: 60px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  padding-left: 15px;
+}
+
+#del{
+  padding-right: 15px;
+}
+
+#cols{
+  padding-right: 150px;
 }
 
 .table-li a{
@@ -117,37 +138,34 @@ tbody tr:nth-child(odd){
   padding-right: 20px;
 }
 
-.table-index-sidebar{
-  margin-left: 10px;
+.index-sidebar{
+  padding-left: 10px;
 }
 
-.table-index-sidebar h2{
+.index-sidebar h2{
   margin-bottom: 50px;
 }
-.table-index-sidebar h3{
+.index-sidebar h3{
   margin-top: 50px;
   margin-bottom: 15px;
 }
 
-.table-index-sidebar ul{
+.index-sidebar ul{
   padding-left: 10px;
 }
 
-.table-index-sidebar li{
+.index-sidebar li{
   padding-bottom: 10px;
 }
 
-.table-index-sidebar ul li:hover{
+.index-sidebar ul li:hover{
   font-size: 18px;
 }
 
-.table-index-sidebar h3:hover{
+.index-sidebar h3:hover{
   font-size: 20px;
 }
 
-.table-detail nav {
-
-}
 
 .table-detail .top{
   position: fixed;
@@ -162,10 +180,13 @@ tbody tr:nth-child(odd){
 }
 
 .table-detail .bottom{
-  bottom: 0px;
-  left: 190px;
-  background: white;
-  width: 50px;
+  float: left;
+  background: transparent;
+  width: 35px;
+}
+
+.bottom button{
+  width: 35px;
 }
 
 .invisible{

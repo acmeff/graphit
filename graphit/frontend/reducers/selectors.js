@@ -12,3 +12,8 @@ export const contentArray = tableDetail => (
 export const columns = content => (
   Object.keys(content[0])
 );
+
+
+export const allGraphs = state => (
+  values(state.graphs)
+);

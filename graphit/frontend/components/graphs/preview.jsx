@@ -93,6 +93,7 @@ class Preview extends React.Component{
 
   handleSave(e){
     e.preventDefault();
+    console.log(this.props);
     this.setState({x_data: this.categories, y_data: this.columns, table_id: this.props.tableId},
        () => this.props.createGraph(this.state));
 
