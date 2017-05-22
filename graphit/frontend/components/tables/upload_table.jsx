@@ -12,7 +12,7 @@ class UploadTable extends React.Component{
 
     this.disable = '';
 
-    this.state = {title: '', content: null, format: ''};
+    this.state = {title: '', content: null, format: '', errors: false};
   }
 
   componentDidMount(){
@@ -44,8 +44,13 @@ class UploadTable extends React.Component{
 
   handleClick(e){
     e.preventDefault();
-    this.props.createTable(this.state)
-    .then((table) => this.props.history.push(`/tables/${table.id}`));
+    if (this.state.title){
+      this.props.createTable(this.state)
+      .then((table) => this.props.history.push(`/tables/${table.id}`));
+    } else {
+      this.props.errors.push('Please provide a title');
+      this.setState({errors: true});
+    }
   }
 
   renderErrors(){

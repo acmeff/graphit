@@ -7,8 +7,6 @@ class Table < ApplicationRecord
   foreign_key: :owner_id,
   class_name: :User
 
-  has_many :graphs,
-  primary_key: :id,
-  foreign_key: :table_id,
-  class_name: :Graph
+  has_many :graphs, dependent: :destroy
+
 end
