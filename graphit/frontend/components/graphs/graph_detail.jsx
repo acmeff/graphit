@@ -34,7 +34,7 @@ class GraphDetail extends React.Component {
       axis: {
         x: {
             type: 'category',
-            categories: this.props.graph.x_Data,
+            categories: this.props.graph.x_data,
             height: 100,
             tick: {
               rotate: 60,

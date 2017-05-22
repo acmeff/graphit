@@ -10,6 +10,8 @@ class UploadTable extends React.Component{
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
 
+    this.disable = '';
+
     this.state = {title: '', content: null, format: ''};
   }
 
@@ -19,12 +21,17 @@ class UploadTable extends React.Component{
 
   handleDrop(files){
     const file = files[0];
-    console.log(file);
     Papa.parse(file, {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
-        this.display = `File added: ${file.name}`;
+        let test = file.name.slice(file.name.length-3);
+        if (test !== 'csv'){
+          this.props.errors.push('Must be a csv file');
+        } else {
+          this.display = `File added: ${file.name}`;
+          this.props.clearErrors();
+        }
         this.setState({content: results.data, format: file.name.slice(file.name.length-3)});
       }
     });
@@ -38,7 +45,7 @@ class UploadTable extends React.Component{
   handleClick(e){
     e.preventDefault();
     this.props.createTable(this.state)
-      .then((table) => this.props.history.push(`/tables/${table.id}`));
+    .then((table) => this.props.history.push(`/tables/${table.id}`));
   }
 
   renderErrors(){
@@ -61,7 +68,7 @@ class UploadTable extends React.Component{
                  value={this.state.title}
                  onChange={this.handleChange}>
           </input>
-          <button onClick={this.handleClick}>Save</button>
+          <button onClick={this.handleClick} disabled={this.state.format !== 'csv'} >Save</button>
         </form>
         <DropToUpload onDrop={this.handleDrop} className='upload-box'>
           <h4>Drag & drop file here</h4>

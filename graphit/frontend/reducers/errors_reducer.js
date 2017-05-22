@@ -17,9 +17,13 @@ const ErrorsReducer = (state=defaultState, action) => {
     case RECEIVE_UPLOAD_ERRORS:
       return Object.assign({}, state, {uploadErrors: action.errors.responseJSON});
     case RECEIVE_SAVE_ERRORS:
-      return Object.assign({}, state, {saveErrors: action.errors.responseJSON})
+      return Object.assign({}, state, {saveErrors: action.errors.responseJSON});
     case CLEAR_ERRORS:
-      return defaultState;
+      return Object.assign({}, state, {
+        sessionErrors: [],
+        uploadErrors: [],
+        saveErrors: []
+      });
     default:
       return state;
   }

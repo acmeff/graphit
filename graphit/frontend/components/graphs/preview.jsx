@@ -60,8 +60,6 @@ class Preview extends React.Component{
 
   generateLineGraph(){
     this.populateAttributes();
-    console.log(this.columns);
-    console.log(this.categories);
     this.chart = c3.generate({
       bindto: '#preview',
       padding: {
