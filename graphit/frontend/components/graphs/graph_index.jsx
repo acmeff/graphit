@@ -3,6 +3,7 @@ import { Link, Route, Switch } from 'react-router-dom';
 import GraphIndexSidebar from './graph_index_sidebar';
 import GraphsListContainer from './graphs_list_container';
 import GraphDetailContainer from './graph_detail_container';
+import ShareContainer from '../shares/share_container';
 
 class GraphIndex extends React.Component{
   constructor(props){
@@ -23,7 +24,8 @@ class GraphIndex extends React.Component{
 
         <GraphIndexSidebar graphs={this.props.graphs}/>
         <Switch>
-          <Route path='/graphs/:graphId' component={GraphDetailContainer}/>
+          <Route exact path='/graphs/:graphId' component={GraphDetailContainer}/>
+          <Route path='/graphs/:graphId/share' component={ShareContainer}/>
           <Route component={GraphsListContainer}/>
         </Switch>
       </section>

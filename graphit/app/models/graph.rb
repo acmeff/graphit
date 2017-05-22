@@ -12,4 +12,6 @@ class Graph < ApplicationRecord
   primary_key: :id,
   foreign_key: :table_id,
   class_name: :Table
+
+  has_many :shares
 end

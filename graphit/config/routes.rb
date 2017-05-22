@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :destroy]
     resources :tables, only: [:create, :destroy, :index, :show]
     resources :graphs, only: [:create, :destroy, :index, :show]
-    resources :shares, only: [:create, :destroy]
+    resources :shares, only: [:create, :destroy, :index]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

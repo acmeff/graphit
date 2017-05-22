@@ -4,6 +4,7 @@ import TableDetailReducer from './table_detail_reducer';
 import ErrorsReducer from './errors_reducer';
 import GraphsReducer from './graphs_reducer';
 import GraphDetailReducer from './graph_detail_reducer';
+import SharesReducer from './shares_reducer';
 
 import { combineReducers } from 'redux';
 
@@ -13,7 +14,8 @@ const rootReducer = combineReducers({
   tableDetail: TableDetailReducer,
   errors: ErrorsReducer,
   graphs: GraphsReducer,
-  graphDetail: GraphDetailReducer
+  graphDetail: GraphDetailReducer,
+  shares: SharesReducer
 });
 
 export default rootReducer;

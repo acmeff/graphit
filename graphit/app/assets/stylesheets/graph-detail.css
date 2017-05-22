@@ -8,3 +8,13 @@
 .graph-detail{
   text-align: center;
 }
+
+.graph-detail .top{
+  display: flex;
+  justify-content: space-between;
+}
+
+.graph-detail .top a {
+  font-size: 20px;
+  padding: 10px;
+}

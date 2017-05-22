@@ -13,6 +13,8 @@ class User < ApplicationRecord
   foreign_key: :owner_id,
   class_name: :Graph
 
+  has_many :shares
+
   attr_reader :password
 
   after_initialize :ensure_session_token

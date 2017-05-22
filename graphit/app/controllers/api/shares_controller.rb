@@ -13,6 +13,10 @@ class Api::SharesController < ApplicationController
     @share.destroy
   end
 
+  def index
+    @shares = Share.where(user_id: current_user.id)
+  end
+
   private
 
   def user_params
