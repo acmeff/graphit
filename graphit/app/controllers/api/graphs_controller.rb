@@ -19,9 +19,10 @@ class Api::GraphsController < ApplicationController
     @graphs = Graph.all
   end
 
-  def delete
+  def destroy
     @graph = Graph.find(params[:id])
     @graph.destroy
+    render :show
   end
 
   private

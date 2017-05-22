@@ -5,6 +5,7 @@ import merge from 'lodash/merge';
 
 
 const GraphsReducer = (state = {}, action) => {
+  console.log(action);
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_GRAPHS:
