@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170521170529) do
+ActiveRecord::Schema.define(version: 20170522013900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "graphs", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.json     "x_data",     null: false
+    t.json     "y_data",     null: false
+    t.integer  "owner_id",   null: false
+    t.integer  "table_id",   null: false
+    t.string   "type",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_graphs_on_owner_id", using: :btree
+    t.index ["table_id"], name: "index_graphs_on_table_id", using: :btree
+    t.index ["title"], name: "index_graphs_on_title", using: :btree
+  end
 
   create_table "tables", force: :cascade do |t|
     t.integer  "owner_id",   null: false

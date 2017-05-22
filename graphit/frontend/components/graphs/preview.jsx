@@ -4,7 +4,12 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {type: 'bar', xType: 'category', title: ''};
+    this.state = {type: 'bar',
+                  xType: 'category',
+                  title: '',
+                  y_data: '',
+                  x_data: '',
+                  table_id: this.props.tableId};
 
     this.generateLineGraph = this.generateLineGraph.bind(this);
     this.handleType = this.handleType.bind(this);
@@ -36,6 +41,7 @@ class Preview extends React.Component{
       column.unshift(data);
       return column;
     });
+    this.setState({y_data: this.columns});
   }
 
   populateAttributes(){
@@ -43,6 +49,7 @@ class Preview extends React.Component{
 
     this.type = this.props.table.columns[this.props.x];
     this.categories = this.props.tableContent.map(row => row[this.type]);
+    this.setState({x_data: this.categories});
   }
 
 

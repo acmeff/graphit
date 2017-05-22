@@ -8,6 +8,11 @@ class User < ApplicationRecord
   foreign_key: :owner_id,
   class_name: :Table
 
+  has_many :graphs,
+  primary_key: :id,
+  foreign_key: :owner_id,
+  class_name: :Graph
+
   attr_reader :password
 
   after_initialize :ensure_session_token
