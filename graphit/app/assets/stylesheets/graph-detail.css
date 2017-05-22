@@ -18,3 +18,8 @@
   font-size: 20px;
   padding: 10px;
 }
+
+.graph-detail .link-button{
+  float: right;
+  margin: 10px;
+}
