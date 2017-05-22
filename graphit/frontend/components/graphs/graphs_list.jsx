@@ -14,10 +14,6 @@ const GraphIndexList = ({graphs, deleteGraph}) => {
     <section className='graph-detail scroll-sidebar'>
 
       <ul className='graphs-list'>
-        <li id='graph-list-header'>
-          <span>Title</span>
-          <span>Delete</span>
-        </li>
         {listItems}
       </ul>
     </section>

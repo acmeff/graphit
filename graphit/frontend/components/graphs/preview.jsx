@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Preview extends React.Component{
   constructor(props){
@@ -16,6 +17,11 @@ class Preview extends React.Component{
     this.handleTitle = this.handleTitle.bind(this);
     this.populateColumns = this.populateColumns.bind(this);
     this.handleSave = this.handleSave.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+  }
+
+  componentDidMount(){
+    this.props.clearErrors();
   }
 
   componentWillReceiveProps(newProps){
@@ -54,7 +60,8 @@ class Preview extends React.Component{
 
   generateLineGraph(){
     this.populateAttributes();
-
+    console.log(this.columns);
+    console.log(this.categories);
     this.chart = c3.generate({
       bindto: '#preview',
       padding: {
@@ -95,8 +102,16 @@ class Preview extends React.Component{
     e.preventDefault();
     console.log(this.props);
     this.setState({x_data: this.categories, y_data: this.columns, table_id: this.props.tableId},
-       () => this.props.createGraph(this.state));
+       () => this.props.createGraph(this.state).then((graph) => this.props.history.push(`/graphs/${graph.id}`)));
 
+  }
+
+  renderErrors(){
+    if (this.props.errors){
+      return this.props.errors.map((error, idx) => (
+        <li key={idx} className='error'>{error}</li>
+      )
+    );}
   }
 
   render(){
@@ -110,6 +125,9 @@ class Preview extends React.Component{
             className='title-input'>
 
           </input>
+          <ul>
+            {this.renderErrors()}
+          </ul>
           <button onClick={this.handleSave}>Save</button>
         </header>
 
@@ -125,4 +143,4 @@ class Preview extends React.Component{
   }
 }
 
-export default Preview;
+export default withRouter(Preview);

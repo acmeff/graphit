@@ -22,7 +22,7 @@ class Api::TablesController < ApplicationController
   end
 
   def index
-    @tables = Table.all
+    @tables = Table.where(owner_id: current_user.id)
     render :index
   end
 

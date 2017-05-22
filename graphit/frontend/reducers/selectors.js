@@ -17,3 +17,7 @@ export const columns = content => (
 export const allGraphs = state => (
   values(state.graphs)
 );
+
+export const yDataArray = graphDetail => (
+  values(graphDetail.y_data)
+);

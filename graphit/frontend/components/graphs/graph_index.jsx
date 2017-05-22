@@ -1,7 +1,8 @@
 import React from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
 import GraphIndexSidebar from './graph_index_sidebar';
 import GraphsListContainer from './graphs_list_container';
+import GraphDetailContainer from './graph_detail_container';
 
 class GraphIndex extends React.Component{
   constructor(props){
@@ -21,7 +22,10 @@ class GraphIndex extends React.Component{
       <section className='graph-index'>
 
         <GraphIndexSidebar graphs={this.props.graphs}/>
-        <Route component={GraphsListContainer}/>
+        <Switch>
+          <Route path='/graphs/:graphId' component={GraphDetailContainer}/>
+          <Route component={GraphsListContainer}/>
+        </Switch>
       </section>
     );
   }

@@ -4,7 +4,7 @@ export const RECEIVE_GRAPH = 'RECEIVE_GRAPH';
 export const RECEIVE_GRAPHS = 'RECEIVE_GRAPHS';
 export const REMOVE_GRAPH = 'REMOVE_GRAPH';
 export const CREATE_GRAPH = 'CREATE_GRAPH';
-export const RECEIVE_UPLOAD_ERRORS = 'RECEIVE_UPLOAD_ERRORS';
+export const RECEIVE_SAVE_ERRORS = 'RECEIVE_SAVE_ERRORS';
 
 export const receiveGraph = graph => ({
   type: RECEIVE_GRAPH,
@@ -26,8 +26,8 @@ export const addGraph = graph => ({
   graph
 });
 
-export const receiveUploadErrors = errors => ({
-  type: RECEIVE_UPLOAD_ERRORS,
+export const receiveSaveErrors = errors => ({
+  type: RECEIVE_SAVE_ERRORS,
   errors
 });
 
@@ -38,7 +38,7 @@ export const createGraph = graph => dispatch => (
       dispatch(addGraph(newGraph));
       return newGraph;
       },
-      errors => dispatch(receiveUploadErrors(errors))
+      errors => dispatch(receiveSaveErrors(errors))
     )
 );
 
