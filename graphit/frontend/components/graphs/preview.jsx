@@ -4,7 +4,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {type: 'bar',
+    this.state = {format: 'bar',
                   xType: 'category',
                   title: '',
                   y_data: '',
@@ -15,6 +15,7 @@ class Preview extends React.Component{
     this.handleType = this.handleType.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.populateColumns = this.populateColumns.bind(this);
+    this.handleSave = this.handleSave.bind(this);
   }
 
   componentWillReceiveProps(newProps){
@@ -41,7 +42,6 @@ class Preview extends React.Component{
       column.unshift(data);
       return column;
     });
-    this.setState({y_data: this.columns});
   }
 
   populateAttributes(){
@@ -49,7 +49,6 @@ class Preview extends React.Component{
 
     this.type = this.props.table.columns[this.props.x];
     this.categories = this.props.tableContent.map(row => row[this.type]);
-    this.setState({x_data: this.categories});
   }
 
 
@@ -63,7 +62,7 @@ class Preview extends React.Component{
         bottom: 100
       },
       data: {
-        type: this.state.type,
+        type: this.state.format,
         columns: this.columns,
       },
       color: {
@@ -85,11 +84,18 @@ class Preview extends React.Component{
 
   handleType(e){
     e.preventDefault();
-    this.setState({type: e.target.name});
+    this.setState({format: e.target.name});
   }
 
   handleTitle(e){
     this.setState({title: e.target.value});
+  }
+
+  handleSave(e){
+    e.preventDefault();
+    this.setState({x_data: this.categories, y_data: this.columns, table_id: this.props.tableId},
+       () => this.props.createGraph(this.state));
+
   }
 
   render(){
@@ -103,7 +109,7 @@ class Preview extends React.Component{
             className='title-input'>
 
           </input>
-          <button>Save</button>
+          <button onClick={this.handleSave}>Save</button>
         </header>
 
         <section className='preview' id="preview"></section>

@@ -26,6 +26,6 @@ class Api::GraphsController < ApplicationController
 
   private
   def graph_params
-    permit(:graph).require(:title, :table_id, :type)
+    params.require(:graph).permit(:title, :table_id, :format)
   end
 end

@@ -1,10 +1,11 @@
-export const createGraph = graph => (
-  $.ajax({
+export const createGraph = graph => {
+  console.log(graph);
+  return (  $.ajax({
     url: 'api/graphs',
     method: 'POST',
     data: { graph }
-  })
-);
+  }));
+};
 
 export const deleteGraph = graph => (
   $.ajax({
