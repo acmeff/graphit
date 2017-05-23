@@ -23,7 +23,7 @@ class GraphIndexListItem extends React.Component {
             <i className={`fa fa-${this.props.graph.format}-chart fa-5x ${this.props.graph.format}`}></i>
           </Link>
           <Link to={`/tables/${this.props.graph.tableId}`}>
-            <h4>Go To Data Source</h4>
+            <h4>See Data Source</h4>
           </Link>
           <button className='delete-button' onClick={this.handleDelete}><i className="fa fa-trash-o trash-can fa-3x" aria-hidden="true"></i></button>
         </li>

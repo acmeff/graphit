@@ -56,7 +56,7 @@ button {
   border: none;
   font-size: 16px;
   outline: none;
-  box-shadow: 2px 2px #dedede;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.25);
 }
 
 button:hover {
@@ -77,8 +77,12 @@ button:hover {
   background-color: transparent;
 }
 
-.delete-button img:hover{
-  background-color: white;
+.trash-can{
+  color: #b9b9b9;
+}
+
+.trash-can:hover{
+  font-size: 60px;
 }
 
 .button-link {
@@ -95,6 +99,8 @@ button:hover {
   font-size: 16px;
   padding: 10px;
   box-shadow:  2px 2px #dedede;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+
 }
 
 .link-button:hover{

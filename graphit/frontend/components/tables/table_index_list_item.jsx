@@ -18,10 +18,10 @@ class TableIndexListItem extends React.Component {
 
         <li className="table-li">
           <Link to={`/tables/${this.props.table.id}`}>
-            <span className='item-title'>{this.props.table.title}</span>
+            <h4 className='item-title'>{this.props.table.title}</h4>
             <span className='cols'>{this.props.table.columns.join(',  ')}</span>
           </Link>
-          <button className='delete-button' onClick={this.handleDelete}><img src='assets/icon-trash-can.png'></img></button>
+          <button className='delete-button' onClick={this.handleDelete}><i className="fa fa-trash-o trash-can fa-2x" aria-hidden="true"></i></button>
         </li>
 
     );

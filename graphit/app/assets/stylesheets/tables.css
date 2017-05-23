@@ -1,4 +1,4 @@
-.tables-list li {
+.table-li {
   background-color: whitesmoke;
   margin: 10px 0px 10px 0px;
   width: 80%;
@@ -7,7 +7,22 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+  align-content: center;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.table-li a{
+  display: flex;
+  align-items: center;
+}
+
+.table-li h4{
+  margin-left: 10px;
+}
+
+.table-li span{
+  margin-left: 40px;
 }
 
 .tables-list{
@@ -140,6 +155,7 @@ tbody tr:nth-child(odd){
 
 .index-sidebar{
   padding-left: 10px;
+  /*border-right: 1px solid rgba(0,0,0,.25);*/
 }
 
 .index-sidebar h2{
@@ -175,8 +191,9 @@ tbody tr:nth-child(odd){
   width: 90%;
   top: 80px;
   left: 188px;
-  background: whitesmoke;
+  background: white;
   height: 50px;
+  /*border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/
 }
 
 .table-detail .bottom{
