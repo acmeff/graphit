@@ -34,7 +34,7 @@ export const deleteShare = share => dispatch => (
 );
 
 export const getShares = () => dispatch => (
-  APIUtil.getShares().then(shares => receiveShares(shares))
+  APIUtil.getShares().then(shares => dispatch(receiveShares(shares)))
 );
 
 export const getUsers = () => dispatch => (

@@ -17,6 +17,8 @@ const GraphIndexSidebar = (props) => {
       <ul className='side-list'>
         {listItems}
       </ul>
+      <h3><Link to='/graphs/mine'>My Graphs</Link></h3>
+      <h3><Link to='/graphs/shared'>Shared with me</Link></h3>
     </section>
   );
 };

@@ -16,6 +16,8 @@ class Api::SharesController < ApplicationController
 
   def index
     @shares = Share.where(user_id: current_user.id)
+    @graphs = @shares.map{|share| Graph.find(share.graph_id)}
+    render 'api/graphs/index'
   end
 
   private

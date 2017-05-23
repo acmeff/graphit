@@ -10,13 +10,13 @@ import UsersReducer from './users_reducer';
 import { combineReducers } from 'redux';
 
 const rootReducer = combineReducers({
+  shares: SharesReducer,
   session: SessionReducer,
   tables: TablesReducer,
   tableDetail: TableDetailReducer,
   errors: ErrorsReducer,
   graphs: GraphsReducer,
   graphDetail: GraphDetailReducer,
-  shares: SharesReducer,
   users: UsersReducer
 });
 

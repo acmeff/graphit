@@ -11,7 +11,7 @@ class GraphIndex extends React.Component{
   }
 
   componentDidMount(){
-    this.props.getGraphs();
+    this.props.getGraphs().then(()=> this.props.getShares());
   }
 
   render(){
@@ -24,6 +24,8 @@ class GraphIndex extends React.Component{
 
         <GraphIndexSidebar graphs={this.props.graphs}/>
         <Switch>
+          <Route path= '/graphs/mine' component={GraphsListContainer}/>
+          <Route path='/graphs/shared' component={GraphsListContainer}/>
           <Route exact path='/graphs/:graphId' component={GraphDetailContainer}/>
           <Route path='/graphs/:graphId/share' component={ShareContainer}/>
           <Route component={GraphsListContainer}/>

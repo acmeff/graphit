@@ -1,10 +1,12 @@
 import { connect } from 'react-redux';
-import { allGraphs } from '../../reducers/selectors';
+import { allGraphs, myGraphs, sharedGraphs } from '../../reducers/selectors';
 import GraphsList from './graphs_list';
 import { deleteGraph } from '../../actions/graphs_actions';
 
 const mapStateToProps = state => ({
-  graphs: allGraphs(state)
+  graphs: allGraphs(state),
+  myGraphs: myGraphs(state),
+  sharedGraphs: sharedGraphs(state)
 });
 
 const mapDispatchToProps = dispatch => ({

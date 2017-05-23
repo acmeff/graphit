@@ -15,9 +15,17 @@ export const columns = content => (
 
 
 export const allGraphs = state => (
-  values(state.graphs)
+  values(state.graphs).concat(values(state.shares))
 );
 
 export const yDataArray = graphDetail => (
   values(graphDetail.y_data)
+);
+
+export const myGraphs = state => (
+  values(state.graphs)
+);
+
+export const sharedGraphs = state => (
+  values(state.shares)
 );
