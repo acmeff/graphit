@@ -11,7 +11,7 @@ const GraphIndexSidebar = (props) => {
 
   return (
     <section className='index-sidebar index-sidebar-container'>
-      <h2>Your Graphs</h2>
+      <h2 className='sidebar-head'>Your Graphs</h2>
       <Link className='link-button' to='/new-graph'>Add a new graph</Link>
       <h3><Link to='/graphs'>All Graphs</Link></h3>
       <ul className='side-list'>

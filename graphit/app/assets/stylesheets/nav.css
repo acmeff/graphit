@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   background-color: #acd5c8;
-  padding: 20px;
+  padding: 15px;
   position: fixed;
   width: 100%;
   z-index: 10;
@@ -17,10 +17,4 @@
 
 .main-nav ul{
   margin-right: 50px;
-}
-
-
-.main-nav img {
-  height: 30px;
-  width: auto;
 }

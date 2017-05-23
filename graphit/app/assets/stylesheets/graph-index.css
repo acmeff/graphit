@@ -9,13 +9,19 @@
   background-color: whitesmoke;
   position: fixed;
   left: 0;
-  top: 80px;
+  top: 71px;
   padding-right: 20px;
+  box-shadow: 1px 0 3px rgba(0,0,0,0.15);
+}
+
+.sidebar-head{
+  /*box-shadow: 0 4px 3px -3px rgba(0, 0, 0, 0.2);*/
+  margin-top: 10px;
 }
 
 .graphs-list li {
   background-color: whitesmoke;
-  margin: 10px 0px 10px 0px;
+  margin: 10px;
   width: 300px;
   height: 300px;
   padding: 7px;
@@ -58,7 +64,7 @@
 }
 .graphs-list li:hover{
   background-color: #dedede;
-
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -84,5 +90,21 @@
 }
 
 .graph-li .delete-button{
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.fa-share{
+  color: #b9b9b9;
+  padding-right: 10px;
+}
+
+.fa-share:hover{
+  font-size: 55px;
+}
+
+.item-options{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
 }

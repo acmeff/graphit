@@ -33,6 +33,7 @@
 }
 .tables-list li:hover{
   background-color: #dedede;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -149,8 +150,9 @@ tbody tr:nth-child(odd){
   background-color: whitesmoke;
   position: fixed;
   left: 0;
-  top: 80px;
+  top: 71px;
   padding-right: 20px;
+  box-shadow: 1px 0 3px rgba(0,0,0,0.15);
 }
 
 .index-sidebar{
@@ -189,8 +191,8 @@ tbody tr:nth-child(odd){
   align-items: center;
   justify-content: space-around;
   width: 90%;
-  top: 80px;
-  left: 188px;
+  top: 71px;
+  left: 191px;
   background: white;
   height: 50px;
   /*border-bottom: 1px solid rgba(0, 0, 0, 0.2);*/

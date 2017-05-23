@@ -40,7 +40,7 @@ class Preview extends React.Component{
   }
 
   populateColumns(yData){
-    yData = yData.filter(y => y !== undefined);
+    yData = yData.filter(y => y !== -1);
     this.columns = yData.map(y => {
       let data = this.props.table.columns[y];
 

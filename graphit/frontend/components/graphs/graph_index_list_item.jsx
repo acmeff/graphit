@@ -14,7 +14,6 @@ class GraphIndexListItem extends React.Component {
   }
 
   render(){
-    console.log(this.props);
     return(
 
         <li className="graph-li">
@@ -25,7 +24,17 @@ class GraphIndexListItem extends React.Component {
           <Link to={`/tables/${this.props.graph.tableId}`}>
             <h4>See Data Source</h4>
           </Link>
-          <button className='delete-button' onClick={this.handleDelete}><i className="fa fa-trash-o trash-can fa-3x" aria-hidden="true"></i></button>
+          <nav className='item-options'>
+            <button className='delete-button'
+              onClick={this.handleDelete}>
+              <i className="fa fa-trash-o trash-can fa-3x"
+                aria-hidden="true">
+              </i>
+            </button>
+            <Link to={`/graphs/${this.props.graph.id}/share`}>
+              <i className="fa fa-share fa-2x"
+                aria-hidden="true"></i></Link>
+          </nav>
         </li>
 
     );
