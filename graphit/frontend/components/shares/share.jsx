@@ -58,7 +58,7 @@ class Share extends React.Component{
           <input type='text'
             onChange={this.handleInput}
             value={this.state.name}
-            placeholder='username'>
+            placeholder='start typing a username'>
           </input>
         </section>
         <section id="results">
