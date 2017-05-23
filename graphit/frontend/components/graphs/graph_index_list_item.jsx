@@ -14,13 +14,18 @@ class GraphIndexListItem extends React.Component {
   }
 
   render(){
+    console.log(this.props);
     return(
 
         <li className="graph-li">
-          <Link to={`/graphs/${this.props.graph.id}`}>
-            <span className='item-title'>{this.props.graph.title}</span>
+          <Link to={`/graphs/${this.props.graph.id}`} className='graph-link'>
+            <h3 className='item-title'>{this.props.graph.title}</h3>
+            <i className={`fa fa-${this.props.graph.format}-chart fa-5x ${this.props.graph.format}`}></i>
           </Link>
-          <button className='delete-button' onClick={this.handleDelete}><img src='assets/icon-trash-can.png'></img></button>
+          <Link to={`/tables/${this.props.graph.tableId}`}>
+            <h4>Go To Data Source</h4>
+          </Link>
+          <button className='delete-button' onClick={this.handleDelete}><i className="fa fa-trash-o trash-can fa-3x" aria-hidden="true"></i></button>
         </li>
 
     );

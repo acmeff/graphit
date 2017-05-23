@@ -16,20 +16,43 @@
 .graphs-list li {
   background-color: whitesmoke;
   margin: 10px 0px 10px 0px;
-  width: 80%;
+  width: 300px;
+  height: 300px;
   padding: 7px;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   align-items: center;
   text-align: center;
+}
+
+.graphs-list .graph-link{
+  display: flex;
+  height: 40%;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.graphs-list li h3{
+  width: 100%;
+}
+
+.graphs-list h3:hover, .graphs-list h4:hover{
+  font-size: 20px;
+}
+
+.graphs-list i:hover{
+  font-weight: bold;
 }
 
 .graphs-list{
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-around;;
+  flex-wrap: wrap;
 }
 .graphs-list li:hover{
   background-color: #dedede;
@@ -43,4 +66,20 @@
 
 #graph-list-header{
   background-color: whitesmoke;
+}
+
+.bar{
+  color: #f18e43;
+}
+
+.line {
+  color: #3ba8f9;
+}
+
+.area {
+  color: #a679bb;
+}
+
+.trash-can{
+  color: #b9b9b9;
 }
