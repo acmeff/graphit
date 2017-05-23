@@ -14,6 +14,7 @@ class Share extends React.Component{
 
   componentDidMount(){
     this.props.getUsers();
+    this.props.getGraph(this.props.match.params.graphId);
   }
 
   handleInput(e){
@@ -49,14 +50,17 @@ class Share extends React.Component{
           {result}
       </li>
     ));
-
     return(
       <section className='scroll-sidebar share'>
-        <h1>SHARE</h1>
-        <input type='text'
-               onChange={this.handleInput}
-               value={this.state.name}>
-        </input>
+        <h1>Share "{this.props.graph.title}" with someone</h1>
+        <section className='search-bar'>
+          <i className="fa fa-search" aria-hidden="true"></i>
+          <input type='text'
+            onChange={this.handleInput}
+            value={this.state.name}
+            placeholder='username'>
+          </input>
+        </section>
         <section id="results">
           <ul>
             {listResults}

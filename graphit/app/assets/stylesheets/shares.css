@@ -16,3 +16,11 @@ align-items: center;
   margin: 30px;
   text-align: center;
 }
+
+.share li, .share input{
+  font-size: 20px;
+}
+
+.share li:hover{
+  background-color: #dedede;
+}
