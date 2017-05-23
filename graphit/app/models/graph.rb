@@ -13,5 +13,5 @@ class Graph < ApplicationRecord
   foreign_key: :table_id,
   class_name: :Table
 
-  has_many :shares
+  has_many :shares, dependent: :destroy
 end

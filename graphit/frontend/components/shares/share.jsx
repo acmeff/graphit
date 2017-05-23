@@ -31,8 +31,8 @@ class Share extends React.Component{
                             .then(() => this.props.history.push(`/graphs/${this.props.match.params.graphId}`));
   }
 
-  nameClick(e){
-    console.log(e.target);
+  nameClick(result){
+    this.setState({name: result});
   }
 
   renderResults(){
@@ -45,9 +45,7 @@ class Share extends React.Component{
   render(){
     const listResults = this.state.results.map((result, idx) => (
       <li key={idx}
-          onClick={this.nameClick.bind(this)}
-          name={result}
-          value={result}>
+          onClick={this.nameClick.bind(this, result)}>
           {result}
       </li>
     ));

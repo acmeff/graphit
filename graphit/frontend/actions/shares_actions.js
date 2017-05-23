@@ -26,7 +26,7 @@ export const receiveUsers = users => ({
 });
 
 export const createShare = share => dispatch => (
-  APIUtil.createShare(share).then(newShare => dispatch(receiveShare(share)))
+  APIUtil.createShare(share)
 );
 
 export const deleteShare = share => dispatch => (
