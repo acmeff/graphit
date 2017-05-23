@@ -37,9 +37,11 @@ class Share extends React.Component{
   }
 
   renderResults(){
-    let results = Object.keys(this.props.users).filter(user => (
-      user.includes(this.state.name)
-    ));
+    let results = Object.keys(this.props.users).filter(user => {
+      user = user.toLowerCase();
+      let name = this.state.name.toLowerCase();
+      return user.includes(name);
+    });
     this.setState({results});
   }
 
