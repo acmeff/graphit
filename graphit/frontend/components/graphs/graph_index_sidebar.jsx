@@ -13,12 +13,14 @@ const GraphIndexSidebar = (props) => {
     <section className='index-sidebar index-sidebar-container'>
       <h2 className='sidebar-head'>Your Graphs</h2>
       <Link className='link-button' to='/new-graph'>Add a new graph</Link>
-      <h3><Link to='/graphs'>All Graphs</Link></h3>
       <ul className='side-list'>
-        {listItems}
+        <h3><Link to='/graphs'>All Graphs</Link></h3>
+        <ul>
+          {listItems}
+        </ul>
+        <h3><Link to='/graphs/mine'>My Graphs</Link></h3>
+        <h3><Link to='/graphs/shared'>Shared with me</Link></h3>
       </ul>
-      <h3><Link to='/graphs/mine'>My Graphs</Link></h3>
-      <h3><Link to='/graphs/shared'>Shared with me</Link></h3>
     </section>
   );
 };

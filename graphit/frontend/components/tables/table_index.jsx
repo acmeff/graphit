@@ -4,7 +4,7 @@ import { Link, Switch, Route } from 'react-router-dom';
 import { ProtectedRoute } from '../../util/route_util';
 
 import TableDetailContainer from './table_detail_container';
-import TableIndexSidebar from './table_index_sidebar';
+import TableIndexSidebarContainer from './table_index_sidebar_container';
 import TableIndexListContainer from './table_index_list_container';
 
 class TableIndex extends React.Component{
@@ -20,7 +20,7 @@ class TableIndex extends React.Component{
 
       <section className='tables-section'>
         <section className='tables-list-section'>
-          <TableIndexSidebar tables={this.props.tables}/>
+          <TableIndexSidebarContainer/>
         </section>
 
         <Switch>

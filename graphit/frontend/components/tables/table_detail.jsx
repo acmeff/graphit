@@ -37,7 +37,6 @@ class TableDetail extends React.Component {
             <JsonTable rows={ this.props.content } columns={ this.props.columns } />
           </div>
           <nav className='bottom'>
-            <button className='delete-button' onClick={this.handleDelete}><img src='assets/icon-trash-can.png'></img></button>
           </nav>
         </section>
 
