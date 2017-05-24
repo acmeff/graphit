@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
+import GraphSidebarDetailContainer from './graph_index_sidebar_detail_container';
 
 const GraphIndexSidebar = (props) => {
   const listItems = props.graphs.map((graph, idx) => (
@@ -21,6 +22,7 @@ const GraphIndexSidebar = (props) => {
         <h3><Link to='/graphs/mine'>My Graphs</Link></h3>
         <h3><Link to='/graphs/shared'>Shared with me</Link></h3>
       </ul>
+      <Route path='/graphs/:graphId' component={GraphSidebarDetailContainer}/>
     </section>
   );
 };
