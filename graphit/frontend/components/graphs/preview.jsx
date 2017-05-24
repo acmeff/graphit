@@ -83,7 +83,7 @@ class Preview extends React.Component{
 
   handleType(e){
     e.preventDefault();
-    this.setState({format: e.target.name});
+    this.setState({format: e.target.name}, () => this.generateLineGraph());
   }
 
   handleTitle(e){
@@ -114,7 +114,7 @@ class Preview extends React.Component{
     return(
       <section className='preview-with-run'>
         <button onClick={this.handleRun.bind(this)}>
-          <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i>  
+          <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i>
         </button>
         <div className='preview-container'>
           <header className='preview-header'>
