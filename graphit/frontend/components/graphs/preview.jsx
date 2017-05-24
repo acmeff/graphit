@@ -137,6 +137,7 @@ class Preview extends React.Component{
             <button onClick={this.handleType} name='bar'>Bar</button>
             <button onClick={this.handleType} name='spline'>Spline</button>
             <button onClick={this.handleType} name='area'>Area</button>
+            <button onClick={this.handleType} name='pie'>Pie</button>
           </ul>
         </div>
       </section>
