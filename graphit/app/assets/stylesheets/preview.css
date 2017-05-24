@@ -3,9 +3,16 @@
   height: 600px;
 }
 
-.preview-container{
+.preview-with-run{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;;
   flex: 5;
-  margin: 20px;
+}
+
+.preview-container{
+  margin: 20px 20px 20px 5px;
+  width: 100%;
 }
 
 

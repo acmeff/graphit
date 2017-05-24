@@ -12,6 +12,8 @@ class Preview extends React.Component{
                   x_data: '',
                   table_id: this.props.tableId};
 
+    this.oldProps = {};
+
     this.generateLineGraph = this.generateLineGraph.bind(this);
     this.handleType = this.handleType.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
@@ -30,14 +32,6 @@ class Preview extends React.Component{
     }
   }
 
-
-  componentDidUpdate(){
-    if (Object.keys(this.props.table).length !== 0
-          && this.props.x >= 0
-          && this.props.y >= 0){
-      this.generateLineGraph();
-    }
-  }
 
   populateColumns(yData){
     yData = yData.filter(y => y !== -1);
@@ -103,6 +97,11 @@ class Preview extends React.Component{
 
   }
 
+  handleRun(e){
+    e.preventDefault();
+    this.generateLineGraph();
+  }
+
   renderErrors(){
     if (this.props.errors){
       return this.props.errors.map((error, idx) => (
@@ -113,28 +112,33 @@ class Preview extends React.Component{
 
   render(){
     return(
-      <section className='preview-container'>
-        <header className='preview-header'>
-          <input type='text'
-            onChange={this.handleTitle}
-            placeholder='Title'
-            value={this.state.title}
-            className='title-input'>
+      <section className='preview-with-run'>
+        <button onClick={this.handleRun.bind(this)}>
+          <i className="fa fa-arrow-right fa-2x" aria-hidden="true"></i>  
+        </button>
+        <div className='preview-container'>
+          <header className='preview-header'>
+            <input type='text'
+              onChange={this.handleTitle}
+              placeholder='Title'
+              value={this.state.title}
+              className='title-input'>
 
-          </input>
-          <ul>
-            {this.renderErrors()}
+            </input>
+            <ul>
+              {this.renderErrors()}
+            </ul>
+            <button onClick={this.handleSave}>Save</button>
+          </header>
+
+          <section className='preview' id="preview"></section>
+          <ul className='type-opts'>
+            <button onClick={this.handleType} name='line'>Line</button>
+            <button onClick={this.handleType} name='bar'>Bar</button>
+            <button onClick={this.handleType} name='spline'>Spline</button>
+            <button onClick={this.handleType} name='area'>Area</button>
           </ul>
-          <button onClick={this.handleSave}>Save</button>
-        </header>
-
-        <section className='preview' id="preview"></section>
-        <ul className='type-opts'>
-          <button onClick={this.handleType} name='line'>Line</button>
-          <button onClick={this.handleType} name='bar'>Bar</button>
-          <button onClick={this.handleType} name='spline'>Spline</button>
-          <button onClick={this.handleType} name='area'>Area</button>
-        </ul>
+        </div>
       </section>
     );
   }

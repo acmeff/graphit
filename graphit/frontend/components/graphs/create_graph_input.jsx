@@ -85,10 +85,9 @@ class CreateGraphInput extends React.Component{
               <option default disabled>Data</option>
               {this.state.axisOpts}
             </select>
+            
           </form>
         </section>
-        <GraphTitle title={this.state.title}
-                    handleTitle={this.handleTitle}/>
         <PreviewContainer tableId={this.state.tableId}
                           x={this.state.x}
                           y={this.state.y}
