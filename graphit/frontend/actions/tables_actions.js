@@ -31,8 +31,9 @@ export const receiveUploadErrors = errors => ({
   errors
 });
 
+
 export const createTable = table => dispatch => (
-  APIUtil.createTable(table)
+    APIUtil.createTable(table)
     .then(
       newTable => {
       dispatch(addTable(newTable));

@@ -9,10 +9,11 @@ class UploadTable extends React.Component{
     this.handleDrop = this.handleDrop.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
+    this.renderLoading = this.renderLoading.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
 
-    this.disable = '';
 
-    this.state = {title: '', content: null, format: '', errors: false};
+    this.state = {title: '', content: null, format: '', errors: [], loading: false};
   }
 
   componentDidMount(){
@@ -21,44 +22,63 @@ class UploadTable extends React.Component{
 
   handleDrop(files){
     const file = files[0];
+    let errors = this.state.errors;
+    let i = errors.indexOf('Must be a csv file');
+    errors.splice(i, 1);
+    let j = errors.indexOf('Please provide a csv file');
+    errors.splice(j, 1);
     Papa.parse(file, {
       header: true,
       dynamicTyping: true,
       complete: (results) => {
         let test = file.name.slice(file.name.length-3);
         if (test !== 'csv'){
-          this.props.errors.push('Must be a csv file');
+          errors.push('Must be a csv file');
         } else {
           this.display = `File added: ${file.name}`;
-          this.props.clearErrors();
         }
-        this.setState({content: results.data, format: file.name.slice(file.name.length-3)});
+        this.setState({content: results.data, format: file.name.slice(file.name.length-3), errors});
       }
     });
   }
 
 
   handleChange(e){
+    let errors = this.state.errors;
+
     this.setState({title: e.target.value});
   }
 
   handleClick(e){
     e.preventDefault();
-    if (this.state.title){
+    let errors = [];
+    if (this.state.title && this.state.format === 'csv'){
+      this.setState({loading: true});
       this.props.createTable(this.state)
       .then((table) => this.props.history.push(`/tables/${table.id}`));
     } else {
-      this.props.errors.push('Please provide a title');
-      this.setState({errors: true});
+      if (!this.state.title){
+        errors.push('Please provide a title');
+      }
+      if (this.state.format === ''){
+        errors.push('Please provide a csv file');
+      }
     }
+    this.setState({errors});
   }
 
   renderErrors(){
-    if (this.props.errors){
-      return this.props.errors.map((error, idx) => (
+    if (this.state.errors.length > 0){
+      return this.state.errors.map((error, idx) => (
         <li key={idx} className='error'>{error}</li>
       )
     );}
+  }
+
+  renderLoading(){
+    if (this.state.loading){
+      return <h1>LOADING<i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i></h1>;
+    }
   }
 
   render(){
@@ -68,12 +88,13 @@ class UploadTable extends React.Component{
         <h4>(Accepted format: csv)</h4>
         <form>
           {this.renderErrors()}
+          {this.renderLoading()}
           <input type='text'
                  placeholder='Title'
                  value={this.state.title}
                  onChange={this.handleChange}>
           </input>
-          <button onClick={this.handleClick} disabled={this.state.format !== 'csv'} >Save</button>
+          <button onClick={this.handleClick} >Save</button>
         </form>
         <DropToUpload onDrop={this.handleDrop} className='upload-box'>
           <h4>Drag & drop file here</h4>

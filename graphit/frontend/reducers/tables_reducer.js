@@ -3,7 +3,6 @@ import { RECEIVE_TABLES, CREATE_TABLE, REMOVE_TABLE }
 import merge from 'lodash/merge';
 
 
-
 const TablesReducer = (state = {}, action) => {
   Object.freeze(state);
   switch(action.type){
