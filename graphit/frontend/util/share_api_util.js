@@ -6,9 +6,9 @@ export const createShare = share => (
   })
 );
 
-export const deleteShare = share => (
+export const deleteShare = shareId => (
   $.ajax({
-    url: `api/shares/${share.id}`,
+    url: `api/shares/${shareId}`,
     method: 'DELETE'
   })
 );

@@ -9,7 +9,7 @@ const SharesReducer = (state={}, action) => {
       return action.shares;
     case REMOVE_SHARE:
       const newState = Object.assign({}, state);
-      delete newState(action.share.id);
+      delete newState[action.share.id];
       return newState;
     default:
       return state;

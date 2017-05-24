@@ -11,7 +11,11 @@ class GraphIndexListItem extends React.Component {
 
   handleDelete(e){
     e.preventDefault();
-    this.props.deleteGraph(this.props.graph);
+    if (this.props.graph.sharerName){
+      this.props.deleteShare(this.props.graph.shareId);
+    } else {
+      this.props.deleteGraph(this.props.graph);
+    }
   }
 
   sharedBy(){

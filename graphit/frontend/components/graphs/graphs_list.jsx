@@ -30,12 +30,14 @@ class GraphIndexList extends React.Component{
       list = this.props.sharedGraphs.map((graph, idx) => (
         <GraphIndexListItem graph={graph}
           deleteGraph={this.props.deleteGraph}
+          deleteShare={this.props.deleteShare}
           key={idx}/>
       ));
     } else {
       list = this.props.graphs.map((graph, idx) => (
         <GraphIndexListItem graph={graph}
           deleteGraph={this.props.deleteGraph}
+          deleteShare={this.props.deleteShare}
           key={idx}/>
       ));
     }

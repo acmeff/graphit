@@ -9,12 +9,14 @@ class Preview extends React.Component{
                   xType: 'category',
                   title: '',
                   y_data: '',
-                  x_data: [{data: 'none'}],
+                  x_data: '',
                   table_id: this.props.tableId};
 
     this.oldProps = {};
 
-    this.generateLineGraph = this.generateLineGraph.bind(this);
+    this.generateBarGraph = this.generateBarGraph.bind(this);
+    this.generatePieGraph = this.generatePieGraph.bind(this);
+
     this.handleType = this.handleType.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.populateColumns = this.populateColumns.bind(this);
@@ -52,10 +54,10 @@ class Preview extends React.Component{
   }
 
 
-  generateLineGraph(){
+  generateBarGraph(){
     this.populateAttributes();
     this.chart = c3.generate({
-      bindto: '#preview',
+      bindto: '#bar',
       padding: {
         right: 100,
         bottom: 100
@@ -81,9 +83,27 @@ class Preview extends React.Component{
     });
   }
 
+  generatePieGraph(){
+    this.populateAttributes();
+    this.chart = c3.generate({
+      bindto: '#pie',
+      padding: {
+        right: 100,
+        bottom: 100
+      },
+      data: {
+        type: 'pie',
+        columns: this.columns,
+      },
+      color: {
+        pattern: ['#3ba8f9', '#f18e43', '#a679bb']
+      }
+    });
+  }
+
   handleType(e){
     e.preventDefault();
-    this.setState({format: e.target.name}, () => this.generateLineGraph());
+    this.setState({format: e.target.name}, () => this.generateBarGraph());
   }
 
   handleTitle(e){
@@ -92,14 +112,16 @@ class Preview extends React.Component{
 
   handleSave(e){
     e.preventDefault();
-    this.setState({x_data: this.categories, y_data: this.columns, table_id: this.props.tableId},
-       () => this.props.createGraph(this.state).then((graph) => this.props.history.push(`/graphs/${graph.id}`)));
-
+    this.setState({x_data: this.categories, y_data: this.columns, table_id:
+      this.props.tableId},
+    () => this.props.createGraph(this.state).then((graph) =>
+      this.props.history.push(`/graphs/${graph.id}`)));
   }
 
   handleRun(e){
     e.preventDefault();
-    this.generateLineGraph();
+    this.generateBarGraph();
+    this.generatePieGraph();
   }
 
   renderErrors(){
@@ -131,7 +153,8 @@ class Preview extends React.Component{
             <button onClick={this.handleSave}>Save</button>
           </header>
 
-          <section className='preview' id="preview"></section>
+          <section className='preview' id="bar"></section>
+          <section className='preview' id="pie"></section>
           <ul className='type-opts'>
             <button onClick={this.handleType} name='line'>Line</button>
             <button onClick={this.handleType} name='bar'>Bar</button>

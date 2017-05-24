@@ -12,7 +12,9 @@ class Api::SharesController < ApplicationController
 
   def destroy
     @share = Share.find(params[:id])
+    @graph = @share.graph
     @share.destroy
+    render 'api/graphs/show'
   end
 
   def index

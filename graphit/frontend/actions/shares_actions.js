@@ -29,8 +29,8 @@ export const createShare = share => dispatch => (
   APIUtil.createShare(share)
 );
 
-export const deleteShare = share => dispatch => (
-  APIUtil.deleteShare(share).then(oldShare => dispatch(removeShare(oldShare)))
+export const deleteShare = shareId => dispatch => (
+  APIUtil.deleteShare(shareId).then(oldShare => dispatch(removeShare(oldShare)))
 );
 
 export const getShares = () => dispatch => (

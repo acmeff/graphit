@@ -5,5 +5,6 @@
     json.format share.graph.format == 'spline' ? 'line': share.graph.format
     json.tableId share.graph.table_id
     json.sharerName share.sharer.username
+    json.shareId share.id
   end
 end
