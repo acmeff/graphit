@@ -23,7 +23,10 @@ class GraphSidebarDetail extends React.Component{
         <h3>{this.props.graph.title}</h3>
         <nav>
           <Link to='/graphs'><i className="fa fa-arrow-left" aria-hidden="true"></i>Back to all</Link>
-          <Link to='/new-graph'><i className='fa fa-bar-chart'></i>Make a graph</Link>
+          <Link to={`/graphs/${this.props.graph.id}/share`}><i className='fa fa-share'></i>Share graph</Link>
+          <Link to={`/tables/${this.props.graph.table_id}`}>
+            <i className="fa fa-table" aria-hidden="true"></i>
+            Data Source</Link>
           <button className='delete-button'
                   onClick={this.handleDelete}>
             <i className="fa fa-trash-o fa-fw"

@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 class GraphDetail extends React.Component {
   constructor(props){
@@ -49,13 +48,10 @@ class GraphDetail extends React.Component {
   render(){
     return(
       <section className='scroll-sidebar graph-detail'>
-        <nav className='top'>
-          <p className='invisible'>''</p>
-          <h1>{this.props.graph.title}</h1>
-          <Link to='/graphs'>X</Link>
-        </nav>
+
+        <h1>{this.props.graph.title}</h1>
+
         <section id="graph-detail"></section>
-        <Link to={`/graphs/${this.props.graph.id}/share`} className='link-button'>Share</Link>
       </section>
     );
   }
