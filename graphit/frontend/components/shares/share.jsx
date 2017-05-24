@@ -19,8 +19,10 @@ class Share extends React.Component{
 
   handleInput(e){
     this.setState({name: e.target.value}, () => {
-      if (this.state.name.length >= 3){
+      if (this.state.name.length >= 1){
         this.renderResults();
+      } else {
+        this.setState({results: []});
       }
     });
   }
@@ -33,7 +35,7 @@ class Share extends React.Component{
   }
 
   nameClick(result){
-    this.setState({name: result});
+    this.setState({name: result, results: [result]});
   }
 
   renderResults(){
