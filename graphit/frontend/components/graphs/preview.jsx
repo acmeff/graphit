@@ -9,7 +9,7 @@ class Preview extends React.Component{
                   xType: 'category',
                   title: '',
                   y_data: '',
-                  x_data: '',
+                  x_data: [{data: 'none'}],
                   table_id: this.props.tableId};
 
     this.oldProps = {};

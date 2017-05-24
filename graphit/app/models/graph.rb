@@ -1,6 +1,6 @@
 class Graph < ApplicationRecord
   validates :title, :owner, :table, :x_data, :y_data, :format, presence: true
-  validates :format, inclusion: {in: ['bar', 'line', 'spline', 'area'],
+  validates :format, inclusion: {in: ['bar', 'line', 'spline', 'area', 'pie'],
                                message: 'Must be a bar, line, spline, or area graph'}
 
   belongs_to :owner,
