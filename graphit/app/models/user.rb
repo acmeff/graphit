@@ -13,7 +13,23 @@ class User < ApplicationRecord
   foreign_key: :owner_id,
   class_name: :Graph
 
-  has_many :shares
+  has_many :shares,
+  primary_key: :id,
+  foreign_key: :user_id,
+  class_name: :Share
+
+  has_many :shared_shares,
+  primary_key: :id,
+  foreign_key: :sharer_id,
+  class_name: :Share
+
+  has_many :graphs_shared_with,
+  through: :shares,
+  source: :graph
+
+  has_many :graphs_shared,
+  through: :shared_shares,
+  source: :graph
 
   attr_reader :password
 

@@ -1,6 +1,7 @@
 class Api::SharesController < ApplicationController
   def create
     @share = Share.new(share_params)
+    @share.sharer_id = current_user.id
     if @share.save
       @graph = Graph.find(params[:share][:graph_id])
       render 'api/graphs/show'
@@ -15,9 +16,7 @@ class Api::SharesController < ApplicationController
   end
 
   def index
-    @shares = Share.where(user_id: current_user.id)
-    @graphs = @shares.map{|share| Graph.find(share.graph_id)}
-    render 'api/graphs/index'
+    @user = User.includes(shares: :sharer).find(current_user.id)
   end
 
   private

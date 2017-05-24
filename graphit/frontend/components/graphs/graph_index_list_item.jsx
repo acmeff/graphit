@@ -6,11 +6,18 @@ class GraphIndexListItem extends React.Component {
     super(props);
 
     this.handleDelete = this.handleDelete.bind(this);
+    this.sharedBy = this.sharedBy.bind(this);
   }
 
   handleDelete(e){
     e.preventDefault();
     this.props.deleteGraph(this.props.graph);
+  }
+
+  sharedBy(){
+    if (this.props.graph.sharerName){
+      return <h4 id='shared-by'>(Shared by: {this.props.graph.sharerName})</h4>;
+    }
   }
 
   render(){
@@ -24,6 +31,7 @@ class GraphIndexListItem extends React.Component {
           <Link to={`/tables/${this.props.graph.tableId}`}>
             <h4>See Data Source</h4>
           </Link>
+          {this.sharedBy()}
           <nav className='item-options'>
             <button className='delete-button'
               onClick={this.handleDelete}>
