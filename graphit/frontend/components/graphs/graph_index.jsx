@@ -26,8 +26,8 @@ class GraphIndex extends React.Component{
         <Switch>
           <Route path= '/graphs/mine' component={GraphsListContainer}/>
           <Route path='/graphs/shared' component={GraphsListContainer}/>
-          <Route exact path='/graphs/:graphId' component={GraphDetailContainer}/>
-          <Route path='/graphs/:graphId/share' component={ShareContainer}/>
+          <Route exact path='/graphs/:graphId(\d+)' component={GraphDetailContainer}/>
+          <Route path='/graphs/:graphId(\d+)/share' component={ShareContainer}/>
           <Route component={GraphsListContainer}/>
         </Switch>
       </section>

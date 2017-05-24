@@ -22,7 +22,7 @@ const GraphIndexSidebar = (props) => {
         <h3><Link to='/graphs/mine'>My Graphs</Link></h3>
         <h3><Link to='/graphs/shared'>Shared with me</Link></h3>
       </ul>
-      <Route path='/graphs/:graphId' component={GraphSidebarDetailContainer}/>
+      <Route path='/graphs/:graphId(\d+)' component={GraphSidebarDetailContainer}/>
     </section>
   );
 };
