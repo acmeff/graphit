@@ -45,7 +45,6 @@ class UploadTable extends React.Component{
 
   handleChange(e){
     let errors = this.state.errors;
-
     this.setState({title: e.target.value});
   }
 

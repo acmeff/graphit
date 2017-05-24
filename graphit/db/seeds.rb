@@ -10,10 +10,10 @@ User.destroy_all
 Table.destroy_all
 
 user = User.create(username: 'Guest', password: 'password')
-u1 = User.create(username: "princess carolyn", password: 'password')
-u2 = User.create(username: "diane", password: 'password')
-u3 = User.create(username: "todd_chavez", password: 'password')
-User.create(username: "b_horseman", password: 'password')
+u1 = User.create(username: "patty_roberts", password: 'password')
+u2 = User.create(username: "diane123", password: 'password')
+u3 = User.create(username: "teri_chavez", password: 'password')
+User.create(username: "beaman345", password: 'password')
 User.create(username: "evangeline_mackenzie", password: 'password')
 User.create(username: "guadalupe", password: 'password')
 User.create(username: "nia_satterfield", password: 'password')
@@ -27,7 +27,7 @@ User.create(username: "macey.powlowski", password: 'password')
 User.create(username: "reagan", password: 'password')
 User.create(username: "stanford.bruen", password: 'password')
 User.create(username: "zora_corwin", password: 'password')
-User.create(username: "xenophilius_lovegood", password: 'password')
+User.create(username: "xavier789", password: 'password')
 User.create(username: "joanie_maggio", password: 'password')
 User.create(username: "carmel_ratke", password: 'password')
 
