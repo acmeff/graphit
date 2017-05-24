@@ -1,20 +1,13 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Route } from 'react-router-dom';
+import SidebarDetail from './table_index_sidebar_detail';
 
 class TableIndexSidebar extends React.Component {
   constructor(props){
     super(props);
 
-    this.state = {listTables: []};
-
     this.generateList = this.generateList.bind(this);
   }
-
-  componentDidMount(){
-    this.props.getTables();
-
-  }
-
 
 
   generateList(){
@@ -30,24 +23,6 @@ class TableIndexSidebar extends React.Component {
     return listTables;
   }
 
-  generateDetail(){
-    if (this.props.match.params.tableId){
-      return    (<section className='detail-sidebar'>
-                <h3>{this.props.table.title}</h3>
-                <nav>
-                  <button className='delete-button'
-                    onClick={this.handleDelete}>
-                    <i className="fa fa-trash-o trash-can fa-1x fa-fw"
-                      aria-hidden="true">
-                    </i>
-                    <span>DELETE</span>
-                  </button>
-                  <Link to='/new-graph'><i className='fa fa-bar-chart fa-1x'></i>Make a graph</Link>
-                </nav>
-              </section>);
-    }
-  }
-
   render(){
     return (
       <section>
@@ -61,6 +36,7 @@ class TableIndexSidebar extends React.Component {
             </ul>
           </ul>
         </section>
+
       </section>
     );
   }

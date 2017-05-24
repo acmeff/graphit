@@ -29,15 +29,11 @@ class TableDetail extends React.Component {
 
         <section className='table-detail scroll-sidebar'>
           <nav className='top'>
-            <p className='invisible'>''</p>
             <h3>{this.props.table.title}</h3>
-            <Link to='/tables'>X</Link>
           </nav>
           <div className='table-div'>
             <JsonTable rows={ this.props.content } columns={ this.props.columns } />
           </div>
-          <nav className='bottom'>
-          </nav>
         </section>
 
 

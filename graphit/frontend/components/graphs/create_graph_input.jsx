@@ -1,15 +1,17 @@
 import React from 'react';
 import PreviewContainer from './preview_container';
+import GraphTitle from './graph_title';
 
 class CreateGraphInput extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {table: '', x: -1, y: -1, y2: -1, y3: -1, axisOpts: [], tableId: 0};
+    this.state = {table: '', x: -1, y: -1, y2: -1, y3: -1, axisOpts: [], tableId: 0, title: ''};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handleTitle = this.handleTitle.bind(this);
   }
 
   componentDidMount(){
@@ -42,6 +44,9 @@ class CreateGraphInput extends React.Component{
     }
   }
 
+  handleTitle(title){
+    this.setState({title});
+  }
 
   render(){
     return(
@@ -82,12 +87,14 @@ class CreateGraphInput extends React.Component{
             </select>
           </form>
         </section>
-
+        <GraphTitle title={this.state.title}
+                    handleTitle={this.handleTitle}/>
         <PreviewContainer tableId={this.state.tableId}
                           x={this.state.x}
                           y={this.state.y}
                           y2={this.state.y2}
-                          y3={this.state.y3}/>
+                          y3={this.state.y3}
+                          title={this.state.title}/>
       </section>
     );
 

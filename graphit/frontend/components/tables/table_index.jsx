@@ -6,6 +6,7 @@ import { ProtectedRoute } from '../../util/route_util';
 import TableDetailContainer from './table_detail_container';
 import TableIndexSidebarContainer from './table_index_sidebar_container';
 import TableIndexListContainer from './table_index_list_container';
+import SidebarDetailContainer from './table_index_sidebar_detail_container';
 
 class TableIndex extends React.Component{
 
@@ -21,6 +22,7 @@ class TableIndex extends React.Component{
       <section className='tables-section'>
         <section className='tables-list-section'>
           <TableIndexSidebarContainer/>
+          <Route path='/tables/:tableId' component={SidebarDetailContainer}/>
         </section>
 
         <Switch>
