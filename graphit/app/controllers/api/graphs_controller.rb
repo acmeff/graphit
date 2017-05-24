@@ -17,6 +17,7 @@ class Api::GraphsController < ApplicationController
 
   def index
     @graphs = Graph.where(owner_id: current_user.id)
+    # debugger
   end
 
   def destroy
