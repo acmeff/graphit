@@ -15,7 +15,6 @@ class Preview extends React.Component{
     this.oldProps = {};
 
     this.generateBarGraph = this.generateBarGraph.bind(this);
-    this.generatePieGraph = this.generatePieGraph.bind(this);
 
     this.handleType = this.handleType.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
@@ -106,24 +105,6 @@ class Preview extends React.Component{
     });
   }
 
-  generatePieGraph(){
-    this.populateAttributes();
-    this.chart = c3.generate({
-      bindto: '#pie',
-      padding: {
-        right: 100,
-        bottom: 100
-      },
-      data: {
-        type: 'pie',
-        columns: this.columns,
-      },
-      color: {
-        pattern: ['#3ba8f9', '#f18e43', '#a679bb']
-      }
-    });
-  }
-
   handleType(e){
     e.preventDefault();
     this.setState({format: e.target.name}, () => this.generateBarGraph());
@@ -144,7 +125,6 @@ class Preview extends React.Component{
   handleRun(e){
     e.preventDefault();
     this.generateBarGraph();
-    this.generatePieGraph();
   }
 
   renderErrors(){
