@@ -53,7 +53,6 @@ class UploadTable extends React.Component{
     let errors = [];
     if (this.state.title && this.state.format === 'csv'){
       this.setState({loading: true});
-      console.log(this.state);
       this.props.createTable(this.state)
       .then((table) => this.props.history.push(`/tables/${table.id}`));
     } else {

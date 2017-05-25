@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524034602) do
+ActiveRecord::Schema.define(version: 20170525224907) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "graphs", force: :cascade do |t|
     t.string   "title",      null: false
-    t.json     "x_data",     null: false
+    t.json     "x_data"
     t.json     "y_data",     null: false
     t.integer  "owner_id",   null: false
     t.integer  "table_id",   null: false

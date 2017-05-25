@@ -44,6 +44,7 @@ class Preview extends React.Component{
     this.columns = yData.map(y => {
       let data = this.props.table.columns[y];
       let column = this.props.tableContent.map(row => parseInt(row[y]));
+      column.shift();
       column.unshift(data);
       return column;
     });
@@ -53,7 +54,8 @@ class Preview extends React.Component{
 
     if (this.props.x2 !== -1){
       let data = this.props.table.columns[x2];
-      let column = this.props.tableContent.map(row => parseInt(row[data]));
+      let column = this.props.tableContent.map(row => parseInt(row[x2]));
+      column.shift();
       column.unshift('x');
       this.columns.unshift(column);
       this.isX = 'x';
@@ -66,14 +68,18 @@ class Preview extends React.Component{
     this.populateColumns([this.props.y, this.props.y2, this.props.y3]);
     this.populateXData(this.props.x2);
 
-    this.type = this.props.table.columns[this.props.x];
-    let idx = this.props.table.columns.indexOf(this.type);
-    this.categories = this.props.tableContent.map(row => row[idx]);
+    if (this.props.x !== -1) {
+      this.categories = this.props.tableContent.map(row => row[this.props.x]);
+      this.categories.shift();
+    } else {
+      this.categories = ['no xData'];
+    }
   }
 
 
   generateBarGraph(){
     this.populateAttributes();
+    console.log(this.columns);
     this.chart = c3.generate({
       bindto: '#bar',
       padding: {
