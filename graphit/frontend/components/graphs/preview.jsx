@@ -5,7 +5,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {format: 'bar',
+    this.state = {format: '',
                   xType: 'category',
                   title: '',
                   y_data: '',
@@ -32,7 +32,12 @@ class Preview extends React.Component{
     if (newProps.tableId !== this.props.tableId){
       this.props.getTable(newProps.tableId);
     }
+    if (newProps.format !== this.props.format){
+      this.generateBarGraph();
+    }
   }
+
+
 
 
   populateColumns(yData){
@@ -46,8 +51,20 @@ class Preview extends React.Component{
     });
   }
 
+  populateXData(x2){
+
+    if (this.props.x2 !== -1){
+      let data = this.props.table.columns[x2];
+      let column = this.props.tableContent.map(row => parseInt(row[data]));
+      column.unshift('x');
+      this.columns.unshift(column);
+      this.isX = 'x';
+    }
+  }
+
   populateAttributes(){
     this.populateColumns([this.props.y, this.props.y2, this.props.y3]);
+    this.populateXData(this.props.x2);
 
     this.type = this.props.table.columns[this.props.x];
     this.categories = this.props.tableContent.map(row => row[this.type]);
@@ -55,6 +72,7 @@ class Preview extends React.Component{
 
 
   generateBarGraph(){
+    console.log(this.columns);
     this.populateAttributes();
     this.chart = c3.generate({
       bindto: '#bar',
@@ -63,7 +81,8 @@ class Preview extends React.Component{
         bottom: 100
       },
       data: {
-        type: this.state.format,
+        type: this.props.format,
+        x: this.isX,
         columns: this.columns,
       },
       color: {
@@ -79,6 +98,9 @@ class Preview extends React.Component{
               multiline: false
             }
         }
+      },
+      donut:{
+        title: 'this is a donut chart'
       }
     });
   }
@@ -103,7 +125,7 @@ class Preview extends React.Component{
 
   handleType(e){
     e.preventDefault();
-    this.setState({format: e.target.name}, () => this.generateBarGraph());
+    this.props.handleFormat(e.target.name);
   }
 
   handleTitle(e){
@@ -113,7 +135,7 @@ class Preview extends React.Component{
   handleSave(e){
     e.preventDefault();
     this.setState({x_data: this.categories, y_data: this.columns, table_id:
-      this.props.tableId},
+      this.props.tableId, format: this.props.format},
     () => this.props.createGraph(this.state).then((graph) =>
       this.props.history.push(`/graphs/${graph.id}`)));
   }
@@ -154,13 +176,13 @@ class Preview extends React.Component{
           </header>
 
           <section className='preview' id="bar"></section>
-          <section className='preview' id="pie"></section>
           <ul className='type-opts'>
             <button onClick={this.handleType} name='line'>Line</button>
             <button onClick={this.handleType} name='bar'>Bar</button>
             <button onClick={this.handleType} name='spline'>Spline</button>
             <button onClick={this.handleType} name='area'>Area</button>
             <button onClick={this.handleType} name='pie'>Pie</button>
+            <button onClick={this.handleType} name='donut'>Donut</button>
           </ul>
         </div>
       </section>
