@@ -5,7 +5,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {format: '',
+    this.state = {format: 'bar',
                   xType: 'category',
                   title: '',
                   y_data: '',
@@ -81,7 +81,7 @@ class Preview extends React.Component{
         bottom: 100
       },
       data: {
-        type: this.props.format,
+        type: this.state.format,
         x: this.isX,
         columns: this.columns,
       },
@@ -125,7 +125,7 @@ class Preview extends React.Component{
 
   handleType(e){
     e.preventDefault();
-    this.props.handleFormat(e.target.name);
+    this.setState({format: e.target.name}, () => this.generateBarGraph());
   }
 
   handleTitle(e){
@@ -135,7 +135,7 @@ class Preview extends React.Component{
   handleSave(e){
     e.preventDefault();
     this.setState({x_data: this.categories, y_data: this.columns, table_id:
-      this.props.tableId, format: this.props.format},
+      this.props.tableId, format: this.state.format},
     () => this.props.createGraph(this.state).then((graph) =>
       this.props.history.push(`/graphs/${graph.id}`)));
   }

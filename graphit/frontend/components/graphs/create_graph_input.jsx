@@ -14,14 +14,13 @@ class CreateGraphInput extends React.Component{
                   y3: -1,
                   axisOpts: [],
                   tableId: 0,
-                  title: '',
-                  format: 'bar'};
+                  title: ''};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
-    this.handleFormat = this.handleFormat.bind(this);
+    this.clearOptions = this.clearOptions.bind(this);
   }
 
   componentDidMount(){
@@ -58,9 +57,19 @@ class CreateGraphInput extends React.Component{
     this.setState({title});
   }
 
-  handleFormat(format){
-    this.setState({format});
+  clearOptions(e){
+    e.preventDefault();
+    this.setState({table: '',
+                  x: -1,
+                  x2: -1,
+                  y: -1,
+                  y2: -1,
+                  y3: -1,
+                  axisOpts: [],
+                  title: ''});
   }
+
+
   render(){
     return(
       <section className='graph-input-section'>
@@ -72,22 +81,22 @@ class CreateGraphInput extends React.Component{
             <select name='table-select'
               onChange={this.handleChange('table')}
               value={this.state.table}>
-              <option default disabled>Choose a Data Set</option>
+              <option default disabled>Choose a data set from your tables</option>
               {this.generateTableOptions()}
             </select>
-            <select name='x-select'
-              id='x-select'
-              onChange={this.handleChange('x')}
-              value={this.state.x}>
-              <option default disabled>X-Axis(category)</option>
-              {this.state.axisOpts}
-            </select>
-            <h4>(OR)</h4>
             <select name='x2-select'
               id='x2-select'
               onChange={this.handleChange('x2')}
               value={this.state.x2}>
               <option default disabled>X-Axis(data)</option>
+              {this.state.axisOpts}
+            </select>
+            <h4>(OR)</h4>
+            <select name='x-select'
+              id='x-select'
+              onChange={this.handleChange('x')}
+              value={this.state.x}>
+              <option default disabled>X-Axis(category)</option>
               {this.state.axisOpts}
             </select>
             <select name='y-select'
@@ -108,7 +117,7 @@ class CreateGraphInput extends React.Component{
               <option default disabled>Data</option>
               {this.state.axisOpts}
             </select>
-
+            <button onClick={this.clearOptions}>Clear</button>
           </form>
         </section>
         <PreviewContainer tableId={this.state.tableId}
@@ -117,9 +126,7 @@ class CreateGraphInput extends React.Component{
                           y={this.state.y}
                           y2={this.state.y2}
                           y3={this.state.y3}
-                          title={this.state.title}
-                          format={this.state.format}
-                          handleFormat={this.handleFormat}/>
+                          title={this.state.title}/>
       </section>
     );
 
