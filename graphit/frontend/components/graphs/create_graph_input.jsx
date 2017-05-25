@@ -76,12 +76,15 @@ class CreateGraphInput extends React.Component{
               {this.generateTableOptions()}
             </select>
             <select name='x-select'
+              id='x-select'
               onChange={this.handleChange('x')}
               value={this.state.x}>
               <option default disabled>X-Axis(category)</option>
               {this.state.axisOpts}
             </select>
+            <h4>(OR)</h4>
             <select name='x2-select'
+              id='x2-select'
               onChange={this.handleChange('x2')}
               value={this.state.x2}>
               <option default disabled>X-Axis(data)</option>

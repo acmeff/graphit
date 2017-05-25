@@ -46,3 +46,15 @@ select {
   margin: 20px 0px 20px 0px;
   outline: none;
 }
+
+#x-select{
+  margin-bottom: 0;
+}
+
+#x2-select{
+  margin-top: 0;
+}
+
+.graph-input-form h4{
+  margin: 0;
+}

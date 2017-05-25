@@ -24,13 +24,23 @@ class GraphIndexListItem extends React.Component {
     }
   }
 
+  getFormat(){
+    if (this.props.graph.format === 'donut'){
+      this.format = 'pie-chart';
+    } else {
+      this.format = `${this.props.graph.format}-chart`;
+    }
+
+  }
+
   render(){
+    this.getFormat();
     return(
 
         <li className="graph-li">
           <Link to={`/graphs/${this.props.graph.id}`} className='graph-link'>
             <h3 className='item-title'>{this.props.graph.title}</h3>
-            <i className={`fa fa-${this.props.graph.format}-chart fa-5x ${this.props.graph.format}`}></i>
+            <i className={`fa fa-${this.format} fa-5x ${this.props.graph.format}`} id={this.props.graph.format}></i>
           </Link>
           <Link to={`/tables/${this.props.graph.tableId}`}>
             <h4>See Data Source</h4>
