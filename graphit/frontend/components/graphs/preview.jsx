@@ -44,8 +44,7 @@ class Preview extends React.Component{
     yData = yData.filter(y => y !== -1);
     this.columns = yData.map(y => {
       let data = this.props.table.columns[y];
-
-      let column = this.props.tableContent.map(row => parseInt(row[data]));
+      let column = this.props.tableContent.map(row => parseInt(row[y]));
       column.unshift(data);
       return column;
     });
@@ -69,7 +68,8 @@ class Preview extends React.Component{
     this.populateXData(this.props.x2);
 
     this.type = this.props.table.columns[this.props.x];
-    this.categories = this.props.tableContent.map(row => row[this.type]);
+    let idx = this.props.table.columns.indexOf(this.type);
+    this.categories = this.props.tableContent.map(row => row[idx]);
   }
 
 

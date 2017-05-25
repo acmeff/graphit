@@ -28,10 +28,9 @@ class UploadTable extends React.Component{
     let j = errors.indexOf('Please provide a csv file');
     errors.splice(j, 1);
     Papa.parse(file, {
-      header: true,
+      // header: true,
       dynamicTyping: true,
       complete: (results) => {
-        console.log(results.data);
         let test = file.name.slice(file.name.length-3);
         if (test !== 'csv'){
           errors.push('Must be a csv file');
