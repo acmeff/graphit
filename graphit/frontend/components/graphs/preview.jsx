@@ -72,14 +72,13 @@ class Preview extends React.Component{
       this.categories = this.props.tableContent.map(row => row[this.props.x]);
       this.categories.shift();
     } else {
-      this.categories = ['no xData'];
+      this.categories = this.columns[0].slice(1);
     }
   }
 
 
   generateBarGraph(){
     this.populateAttributes();
-    console.log(this.columns);
     this.chart = c3.generate({
       bindto: '#bar',
       padding: {
@@ -122,6 +121,9 @@ class Preview extends React.Component{
 
   handleSave(e){
     e.preventDefault();
+    if(this.props.x2 !== -1){
+      this.columns.shift();
+    }
     this.setState({x_data: this.categories, y_data: this.columns, table_id:
       this.props.tableId, format: this.state.format},
     () => this.props.createGraph(this.state).then((graph) =>
