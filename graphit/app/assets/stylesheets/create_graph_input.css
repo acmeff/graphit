@@ -18,7 +18,7 @@
 }
 
 .graph-input-form-section h2{
-  margin: 0 30px 60px 30px;
+  margin: 0 30px 30px 30px;
   text-align: center;
 }
 
@@ -31,6 +31,7 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
   padding-bottom: 10px;
+  margin-top: 30px;
 }
 
 select {
@@ -57,4 +58,41 @@ select {
 
 .graph-input-form h4{
   margin: 0;
+}
+
+.option{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.radio {
+  font-size: 13px;
+}
+
+.x-option{
+  padding-bottom: 20px;
+}
+
+.x2-option{
+  padding-top: 20px;
+}
+
+.fa-info-circle{
+  padding-right: 10px;
+}
+
+.fa-info-circle:hover{
+  color: #7b7b7b;
+}
+
+
+input[type='radio']{
+  border: 1px solid black;
+  border-radius: 10em;
+}
+
+.hide{
+  display: none;
 }

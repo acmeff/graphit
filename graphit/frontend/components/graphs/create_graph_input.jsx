@@ -14,13 +14,18 @@ class CreateGraphInput extends React.Component{
                   y3: -1,
                   axisOpts: [],
                   tableId: 0,
-                  title: ''};
+                  xHidden: '',
+                  x2Hidden: ''};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleTitle = this.handleTitle.bind(this);
     this.clearOptions = this.clearOptions.bind(this);
+    this.selectPie = this.selectPie.bind(this);
+    this.selectBar = this.selectBar.bind(this);
+    this.selectLine = this.selectLine.bind(this);
+    this.selectAll = this.selectAll.bind(this);
   }
 
   componentDidMount(){
@@ -65,10 +70,28 @@ class CreateGraphInput extends React.Component{
                   y: -1,
                   y2: -1,
                   y3: -1,
-                  axisOpts: [],
-                  title: ''});
+                  axisOpts: []});
   }
 
+  selectPie(e){
+    e.preventDefault();
+    this.setState({xHidden: 'hide', x2Hidden: 'hide'});
+  }
+
+  selectBar(e){
+    e.preventDefault();
+    this.setState({xHidden: '', x2Hidden: 'hide'});
+  }
+
+  selectLine(e){
+    e.preventDefault();
+    this.setState({x2Hidden: '', xHidden: 'hide'});
+  }
+
+  selectAll(e){
+    e.preventDefault();
+    this.setState({xHidden: '', x2Hidden: ''});
+  }
 
   render(){
     return(
@@ -76,48 +99,74 @@ class CreateGraphInput extends React.Component{
         <section className='graph-input-form-section'>
           <h2>Create a Graph</h2>
 
+          <section className='option radio'>
+            <button className='button-link' onClick={this.selectPie}>Pie/Donut</button>
+            <button className='button-link' onClick={this.selectBar}>Bar</button>
+            <button className='button-link' onClick={this.selectLine}>Line/Spline</button>
+            <button className='button-link' onClick={this.selectAll}>All Options</button>
+          </section>
           <form className='graph-input-form'>
-            <h3>Select what data to include in your new graph</h3>
-            <select name='table-select'
-              onChange={this.handleChange('table')}
-              value={this.state.table}>
-              <option default disabled>Choose a data set from your tables</option>
-              {this.generateTableOptions()}
-            </select>
-            <select name='x2-select'
-              id='x2-select'
-              onChange={this.handleChange('x2')}
-              value={this.state.x2}>
-              <option default disabled>X-Axis(data)</option>
-              {this.state.axisOpts}
-            </select>
-            <h4>(OR)</h4>
-            <select name='x-select'
-              id='x-select'
-              onChange={this.handleChange('x')}
-              value={this.state.x}>
-              <option default disabled>X-Axis(category)</option>
-              {this.state.axisOpts}
-            </select>
-            <select name='y-select'
-              onChange={this.handleChange('y')}
-              value={this.state.y}>
-              <option default disabled>Data</option>
-              {this.state.axisOpts}
-            </select>
-            <select name='y2-select'
-              onChange={this.handleChange('y2')}
-              value={this.state.y2}>
-              <option default disabled>Data</option>
-              {this.state.axisOpts}
-            </select>
-            <select name='y3-select'
-              onChange={this.handleChange('y3')}
-              value={this.state.y3}>
-              <option default disabled>Data</option>
-              {this.state.axisOpts}
-            </select>
-            <button onClick={this.clearOptions}>Clear</button>
+
+            <section className='option'>
+
+              <select name='table-select'
+                onChange={this.handleChange('table')}
+                value={this.state.table}>
+                <option default disabled>Choose a data table</option>
+                {this.generateTableOptions()}
+              </select>
+            </section>
+            <section className={`option ${this.state.x2Hidden}`} >
+              <select name='x2-select'
+                id='x2-select'
+                onChange={this.handleChange('x2')}
+                value={this.state.x2}>
+                <option default disabled>X-Axis(data)</option>
+                {this.state.axisOpts}
+              </select>
+            </section>
+            <section className={`option ${this.state.xHidden} ${this.state.x2Hidden}`}>
+              <h4>(OR)</h4>
+            </section>
+            <section className={`option ${this.state.xHidden}`}>
+
+              <select name='x-select'
+                id='x-select'
+                onChange={this.handleChange('x')}
+                value={this.state.x}>
+                <option default disabled>X-Axis(category)</option>
+                {this.state.axisOpts}
+              </select>
+            </section>
+            <section className='option'>
+
+              <select name='y-select'
+                onChange={this.handleChange('y')}
+                value={this.state.y}>
+                <option default disabled>Data to display</option>
+                {this.state.axisOpts}
+              </select>
+            </section>
+            <br/>(Optional)
+            <section className='option'>
+
+              <select name='y2-select'
+                onChange={this.handleChange('y2')}
+                value={this.state.y2}>
+                <option default disabled>Data to display</option>
+                {this.state.axisOpts}
+              </select>
+            </section>
+            <section className='option'>
+
+              <select name='y3-select'
+                onChange={this.handleChange('y3')}
+                value={this.state.y3}>
+                <option default disabled>Data to display</option>
+                {this.state.axisOpts}
+              </select>
+            </section>
+            <button onClick={this.clearOptions}>Clear All</button>
           </form>
         </section>
         <PreviewContainer tableId={this.state.tableId}
@@ -125,8 +174,7 @@ class CreateGraphInput extends React.Component{
                           x2={this.state.x2}
                           y={this.state.y}
                           y2={this.state.y2}
-                          y3={this.state.y3}
-                          title={this.state.title}/>
+                          y3={this.state.y3}/>
       </section>
     );
 

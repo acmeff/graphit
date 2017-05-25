@@ -59,6 +59,8 @@ class Preview extends React.Component{
       column.unshift('x');
       this.columns.unshift(column);
       this.isX = 'x';
+    } else {
+      this.isX = '';
     }
   }
 
@@ -72,7 +74,6 @@ class Preview extends React.Component{
 
 
   generateBarGraph(){
-    console.log(this.columns);
     this.populateAttributes();
     this.chart = c3.generate({
       bindto: '#bar',
@@ -100,7 +101,7 @@ class Preview extends React.Component{
         }
       },
       donut:{
-        title: 'this is a donut chart'
+        title: this.props.table.title
       }
     });
   }
