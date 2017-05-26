@@ -5,7 +5,7 @@ class Preview extends React.Component{
   constructor(props){
     super(props);
 
-    this.state = {format: 'bar',
+    this.state = {format: this.props.format,
                   xType: 'category',
                   title: '',
                   y_data: '',
@@ -32,7 +32,7 @@ class Preview extends React.Component{
       this.props.getTable(newProps.tableId);
     }
     if (newProps.format !== this.props.format){
-      this.generateBarGraph();
+      this.setState({format: newProps.format});
     }
   }
 
@@ -71,6 +71,8 @@ class Preview extends React.Component{
     if (this.props.x !== -1) {
       this.categories = this.props.tableContent.map(row => row[this.props.x]);
       this.categories.shift();
+    } else if (this.columns.length === 0){
+      this.categories = [];
     } else {
       this.categories = this.columns[0].slice(1);
     }

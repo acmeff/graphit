@@ -16,7 +16,8 @@ class CreateGraphInput extends React.Component{
                   tableId: 0,
                   xHidden: '',
                   x2Hidden: '',
-                  infoHidden: 'hide'};
+                  infoHidden: 'hide',
+                  format: 'bar'};
 
     this.generateTableOptions = this.generateTableOptions.bind(this);
     this.generateAxisOptions = this.generateAxisOptions.bind(this);
@@ -72,22 +73,22 @@ class CreateGraphInput extends React.Component{
       case 'pie':
         return e => {
           e.preventDefault();
-          this.setState({xHidden: 'hide', x2Hidden: 'hide'});
+          this.setState({xHidden: 'hide', x2Hidden: 'hide', format: 'pie'});
         };
       case 'bar':
         return e => {
           e.preventDefault();
-          this.setState({xHidden: '', x: -1, x2Hidden: 'hide'});
+          this.setState({xHidden: '', x: -1, x2Hidden: 'hide', format: 'bar'});
         };
       case 'line':
         return e => {
           e.preventDefault();
-          this.setState({xHidden: 'hide', x2Hidden: '', x2: -1});
+          this.setState({xHidden: 'hide', x2Hidden: '', x2: -1, format: 'line'});
         };
       default:
         return e => {
           e.preventDefault();
-          this.setState({xHidden: '', x2Hidden: '', x: -1, x2: -1});
+          this.setState({xHidden: '', x2Hidden: '', x: -1, x2: -1, format: 'bar'});
         };
     }
 }
@@ -162,7 +163,8 @@ class CreateGraphInput extends React.Component{
                           x2={this.state.x2}
                           y={this.state.y}
                           y2={this.state.y2}
-                          y3={this.state.y3}/>
+                          y3={this.state.y3}
+                          format={this.state.format}/>
       </section>
     );
 
