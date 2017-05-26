@@ -27,24 +27,19 @@ A graph can be created from any one of the user's uploaded data sets. Once they 
 
 ![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
 
-The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating. The data, which is returned from the database as JSON, is then manipulated into the correct format to create the graph.
+The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating. The data, which is returned from the database as JSON, is then manipulated into the correct format to create the graph. Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph.
 
-![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")  
+![area graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/area-graph.png "See current state of graph")
 
-Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph. When saved, graphs are stored in the database with a reference to the table that was used to create it, along with information about the specific format of the graph, so that it can be easily re-created at a later time.
+Types of charts available:
++ Line graphs
++ Bar graphs
++ Area graphs
++ Spline graphs
++ Pie charts
++ Donut charts
 
-![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
-
- Types of charts available:
- + Line graphs
- + Bar graphs
- + Area graphs
- + Spline graphs
- + Pie charts
- + Donut charts
-
-
-All saved graphs may be displayed from the user's account and shared with other users.
+When saved, graphs are stored in the database with a reference to the table that was used to create it, along with information about the specific format of the graph, so that it can be easily re-created at a later time. All saved graphs may be displayed from the user's account and shared with other users.
 
 ![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")                  ![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
 
@@ -66,9 +61,9 @@ Graphit is a web application built with a Ruby on Rails, React/Redux, and a Post
 
 Next steps for Graphit include implementing the following:
 
- + The ability to edit graphs
+ + Edit graphs
  + Support additional data types for upload
- + The ability to create graphs using multiple data sources
+ + Create graphs using multiple data sources
 
 
 [chartio]:https://chartio.com/
