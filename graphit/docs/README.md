@@ -4,7 +4,7 @@
 
 [Trello Link][trello]
 
-[heroku]:https://graphit.tech
+[heroku]:graphit.tech
 [trello]: https://trello.com/b/qANnL4xW/graphit
 
 ## Minimum Viable Product
