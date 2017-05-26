@@ -68,7 +68,7 @@ Next steps for Graphit include implementing the following:
 
 
 [chartio]:https://chartio.com/
-[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
+[heroku]:http://graphit.tech
 [c3]:https://github.com/c3js/c3
 [PapaParse]:https://github.com/mholt/PapaParse
 [droptoupload]:https://github.com/compulim/react-drop-to-upload
