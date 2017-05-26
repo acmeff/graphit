@@ -52,7 +52,7 @@ When saved, graphs are stored in the database with a reference to the table that
 Graphit is a web application built with a Ruby on Rails, React/Redux, and a PostgreSQL database.
 
   + Data visualization uses [C3.js][c3]
-  + CSV parsing uses [PapaParse][papaparse]
+  + CSV to JSON parsing uses [PapaParse][papaparse]
   + Uploading files uses [react-drop-to-upload][droptoupload]
   + Formatting html tables uses [react-json-table][jsontable]
 
@@ -61,13 +61,13 @@ Graphit is a web application built with a Ruby on Rails, React/Redux, and a Post
 
 Next steps for Graphit include implementing the following:
 
- + Edit graphs
- + Support additional data types for upload
- + Create graphs using multiple data sources
+ + Editing graphs
+ + Supporting additional data types for upload
+ + Creating graphs using multiple data sources
 
 
 [chartio]:https://chartio.com/
-[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
+[heroku]:https://graphit.tech
 [c3]:https://github.com/c3js/c3
 [PapaParse]:https://github.com/mholt/PapaParse
 [droptoupload]:https://github.com/compulim/react-drop-to-upload
