@@ -25,7 +25,7 @@ A graph can be created from any one of the user's uploaded data sets. Once they 
 
 The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating.
 
-![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")
+![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
 
 Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph.
 
