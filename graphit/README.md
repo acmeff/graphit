@@ -13,7 +13,7 @@ Graphit is an application inspired by [Chartio][chartio]. It is built using Ruby
 ### Upload & save data
   Graphit supports uploading csv files and saving the data for future use. Any files that are added by a user can be accessed and viewed by that user's account.
 
-  ![viewing data](/docs/screenshots/table-index.png)
+  ![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-index.png)
 
 
 ### Dynamically generating visualizations based on the uploaded data
