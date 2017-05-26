@@ -19,6 +19,11 @@ class GraphIndex extends React.Component{
       <li key={idx}>{graph.title}</li>
     ));
 
+    let placeHolder;
+    if (graphsList.length === 0){
+      placeHolder = <h4 className='default-index'>You don't have any graphs yet. Try creating some!</h4>;
+    }
+
     return(
       <section className='graph-index'>
 
@@ -30,6 +35,7 @@ class GraphIndex extends React.Component{
           <Route path='/graphs/:graphId(\d+)/share' component={ShareContainer}/>
           <Route component={GraphsListContainer}/>
         </Switch>
+        {placeHolder}
       </section>
     );
   }

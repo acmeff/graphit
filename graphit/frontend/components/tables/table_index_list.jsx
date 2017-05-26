@@ -9,6 +9,10 @@ const TableIndexList = ({tables, deleteTable}) => {
                         deleteTable={deleteTable}
                         key={idx}/>
   ));
+  let placeHolder;
+  if (listItems.length === 0){
+    placeHolder = <h4 className='default-index'>You don't have any tables yet. Try uploading some!</h4>;
+  }
   return(
     <section className='table-detail scroll-sidebar'>
       <ul className='tables-list'>
@@ -17,6 +21,7 @@ const TableIndexList = ({tables, deleteTable}) => {
           <span id='cols'>Columns</span>
           <span id='del'>Delete</span>
         </nav>
+        {placeHolder}
         <ul className='list-items'>
           {listItems}
         </ul>
