@@ -77,17 +77,17 @@ class CreateGraphInput extends React.Component{
       case 'bar':
         return e => {
           e.preventDefault();
-          this.setState({xHidden: '', x2Hidden: 'hide'});
+          this.setState({xHidden: '', x: -1, x2Hidden: 'hide'});
         };
       case 'line':
         return e => {
           e.preventDefault();
-          this.setState({xHidden: 'hide', x2Hidden: ''});
+          this.setState({xHidden: 'hide', x2Hidden: '', x2: -1});
         };
       default:
         return e => {
           e.preventDefault();
-          this.setState({xHidden: '', x2Hidden: ''});
+          this.setState({xHidden: '', x2Hidden: '', x: -1, x2: -1});
         };
     }
 }
@@ -100,23 +100,28 @@ class CreateGraphInput extends React.Component{
           <h4>What type of graph would you like to make?</h4>
           <section className='types'>
             <div className='graph-input'onClick={this.selectType('pie')}>
-              <i className='fa fa-pie-chart fa-2x pie'></i><span>Pie/Donut</span>
+              <i className='fa fa-pie-chart fa-2x pie'></i>
+
+            <span>Pie/Donut</span>
             </div>
             <div className='graph-input'onClick={this.selectType('bar')}>
               <i className='fa fa-bar-chart fa-2x bar'></i><span>Bar</span>
             </div>
             <br/>
             <div className='graph-input'onClick={this.selectType('line')}>
-              <i className='fa fa-line-chart fa-2x line'></i><span>Line/Spline</span>
+              <i className='fa fa-line-chart fa-2x line'></i>
+              <span>Line/Spline</span>
             </div>
             <div className='graph-input'onClick={this.selectType('all')}>
-              <i className="fa fa-plus fa-2x area" aria-hidden="true"></i><span>All Options</span>
+              <i className="fa fa-plus fa-2x area" aria-hidden="true"></i>
+              <span>All Options</span>
             </div>
           </section>
           <form className='graph-input-form'>
             Data Source
             <section className='option'>
-              <select onChange={this.handleChange('table')} value={this.state.table}>
+              <select onChange={this.handleChange('table')}
+                      value={this.state.table}>
                 <option default disabled>Choose a data table</option>
                 {this.generateTableOptions()}
               </select>
