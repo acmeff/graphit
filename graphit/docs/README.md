@@ -9,7 +9,7 @@
 
 ## Minimum Viable Product
 
-Graphit is an application inspired by Chartio. It is build using Ruby on Rails and React/Redux. Graphit will satisfy the following criteria by the end of Week 9, along with adequate styling, smooth navigation, and sufficient seed data:
+Graphit is an application inspired by Chartio. It is built using Ruby on Rails and React/Redux. Graphit will satisfy the following criteria by the end of Week 9, along with adequate styling, smooth navigation, and sufficient seed data:
 
 - [x] New account creation, login, and guest/demo login
 - [ ] Production README

@@ -1,4 +1,18 @@
-# README
+# Graphit
+
+[Graphit][heroku]
+
+[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
+
+## About the site
+
+Graphit is an application inspired by [Chartio][chartio]. It is built using Ruby on Rails and React/Redux.
+
+[chartio]:https://chartio.com/
+
+## Main features
+
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
