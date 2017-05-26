@@ -72,7 +72,7 @@ select {
   justify-content: center;
   flex-wrap: wrap;
   text-align: center;
-  margin-left: 60px;
+  /*margin-left: 60px;*/
   padding: 20px;
 }
 

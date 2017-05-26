@@ -14,10 +14,10 @@ Graphit is an application inspired by Chartio. It is build using Ruby on Rails a
 - [x] New account creation, login, and guest/demo login
 - [ ] Production README
 - [x] Hosting on Heroku
-- [ ] Users can upload, save, and delete data tables
-- [ ] Users can create, save, and delete graphs
-- [ ] Users can share charts with other Users
-- [ ] Supports CSV format
+- [x] Users can upload, save, and delete data tables
+- [x] Users can create, save, and delete graphs
+- [x] Users can share charts with other Users
+- [x] Supports CSV format
 
 ## Design Docs
 
