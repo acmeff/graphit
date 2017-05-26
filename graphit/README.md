@@ -2,15 +2,16 @@
 
 [Go to live site][heroku]
 
-[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
 
-Graphit is a data visualization application inspired by [Chartio][chartio]. It allows users to upload data to be easily turned into visually-pleasing graphs and charts.
 
-[chartio]:https://chartio.com/
+Graphit is a data visualization application inspired by [Chartio][chartio]. It allows users to upload and save data, which they can then easily turn into visually-pleasing graphs and charts.
 
+
+---
 ## Main features
 
 ### Upload & save data sets
+
 Graphit supports uploading csv files and saving the data for future use. As the files are uploaded, they are parsed into JSON to be stored in the database.
 
 
@@ -20,14 +21,19 @@ Any files that are added by a user can be accessed and viewed from that user's a
 
 
 ### Generate data visualizations
+
 Saved data sets are used to create charts and graphs, which can then be saved and shared.
-A graph can be created from any one of the user's uploaded data sets. Once they have selected a data set to work with, that table is retrieved from the database. The JSON is then manipulated into the correct format to create the graph.
+A graph can be created from any one of the user's uploaded data sets. Once they have selected a data set to work with, that table is retrieved from the database.
 
-The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating.
+![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
 
-![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")                     ![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
+The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating. The data, which is returned from the database as JSON, is then manipulated into the correct format to create the graph.
 
-Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph.
+![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")  
+
+Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph. When saved, graphs are stored in the database with a reference to the table that was used to create it, along with information about the specific format of the graph, so that it can be easily re-created at a later time.
+
+![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
 
  Types of charts available:
  + Line graphs
@@ -37,21 +43,37 @@ Once the initial graph has be generated, the user may toggle between formats and
  + Pie charts
  + Donut charts
 
-![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
 
-All saved graphs may be displayed from the user's account, and any graph may be shared with another user.
+All saved graphs may be displayed from the user's account and shared with other users.
 
 ![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")                  ![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
 
 
 
-
+---
 
 ## Technologies & Dependencies
-  Graphit is a single page application built with a Ruby on Rails, React/Redux, and PostgreSQL database.
+
+Graphit is a web application built with a Ruby on Rails, React/Redux, and a PostgreSQL database.
+
+  + Data visualization uses [C3.js][c3]
+  + CSV parsing uses [PapaParse][papaparse]
+  + Uploading files uses [react-drop-to-upload][droptoupload]
+  + Formatting html tables uses [react-json-table][jsontable]
+
+---
+## Future features
+
+Next steps for Graphit include implementing the following:
+
+ + The ability to edit graphs
+ + Support additional data types for upload
+ + The ability to create graphs using multiple data sources
 
 
-  + Data visualizations uses C3.js
-  + CSV parsing uses PapaParse
-  + uploading Things
-  + tables
+[chartio]:https://chartio.com/
+[heroku]:https://ancient-taiga-42028.herokuapp.com/#/
+[c3]:https://github.com/c3js/c3
+[PapaParse]:https://github.com/mholt/PapaParse
+[droptoupload]:https://github.com/compulim/react-drop-to-upload
+[jsontable]:https://github.com/arqex/react-json-table
