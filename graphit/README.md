@@ -16,16 +16,16 @@ Graphit supports uploading csv files and saving the data for future use. As the 
 
 Any files that are added by a user can be accessed and viewed from that user's account. The JSON data is retrieved from the database and displayed in a table for the user to see.
 
-![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-index.png "All data for a user")
+![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-detail.png "Example data table")
 
 
 ### Generate data visualizations
 Saved data sets are used to create charts and graphs, which can then be saved and shared.
-A graph can be created from any one of the user's uploaded data sets. Once they have selected a data set to work with, that table is retrieved from the database so that the JSON can be manipulated into the correct format to create the graph.
+A graph can be created from any one of the user's uploaded data sets. Once they have selected a data set to work with, that table is retrieved from the database. The JSON is then manipulated into the correct format to create the graph.
 
 The graphs are generated based on the user's input. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating.
 
-![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
+![input data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-input.png "Select data for a graph")                     ![graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/graph-preview.png "See current state of graph")
 
 Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph.
 
@@ -37,11 +37,11 @@ Once the initial graph has be generated, the user may toggle between formats and
  + Pie charts
  + Donut charts
 
- ![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
+![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
 
 All saved graphs may be displayed from the user's account, and any graph may be shared with another user.
 
-![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
+![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")                  ![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
 
 
 
