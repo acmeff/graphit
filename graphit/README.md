@@ -11,27 +11,38 @@ Graphit is a data visualization application inspired by [Chartio][chartio]. It a
 ## Main features
 
 ### Upload & save data
-  Graphit supports uploading csv files and saving the data for future use. Any files that are added by a user can be accessed and viewed from that user's account.
+Graphit supports uploading csv files and saving the data for future use. Any files that are added by a user can be accessed and viewed from that user's account.
 
-  ![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-index.png "All data for a user")
+![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-index.png "All data for a user")
 
-  ![viewing data set](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-detail.png "Viewing single data table")
+![viewing data set](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-detail.png "Viewing single data table")
 
 
-### Dynamically generating visualizations based on the uploaded data
+### Generate visualizations based on the uploaded data
+Users can use their saved data to create and save charts and graphs, which they can then share with other users.
+
+The graphs are generated based on the user's input. A graph can be created from any one of the user's uploaded data sets. They can then select a format to start with, along with which slices of data they want to include in the graph they are creating. Once the initial graph has be generated, the user may toggle between formats and data sets and view their changes before saving the graph.
+
+![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
+
+All saved graphs may be displayed from the user's account, and any graph may be shared with another user.
+
+![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")
+![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
+
+
 
   Types of charts available:
-    + Line graphs
-    + Bar graphs
-    + Area graphs
-    + Spline graphs
-    + Pie charts
-    + Donut charts
-    
-  ![create graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/create-graph.png "Creating a new graph based on user's data set")
+  + Line graphs
+  + Bar graphs
+  + Area graphs
+  + Spline graphs
+  + Pie charts
+  + Donut charts
+
 
 ## Technologies & Dependencies
-    Graphit is a single page application built with a Ruby on Rails backend (v5.0.3), a React.js (v15.5.4) front end, and a PostgreSQL database.
+  Graphit is a single page application built with a Ruby on Rails, React/Redux, and PostgreSQL database.
 
 
   + Data visualizations uses C3.js
