@@ -4,13 +4,19 @@
 
 [heroku]:https://ancient-taiga-42028.herokuapp.com/#/
 
-## About the site
-
-Graphit is an application inspired by [Chartio][chartio]. It is built using Ruby on Rails and React/Redux.
+Graphit is an application inspired by [Chartio][chartio]. It is built using Ruby on Rails (v5.0.3) and React (v15.5.4).
 
 [chartio]:https://chartio.com/
 
 ## Main features
+
+### Upload & save data
+  Graphit supports uploading csv files and saving the data for future use. Any files that are added by a user can be accessed and viewed by that user's account.
+
+  ![viewing data](/docs/screenshots/table-index.png)
+
+
+### Dynamically generating visualizations based on the uploaded data
 
 
 
