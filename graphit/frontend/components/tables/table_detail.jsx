@@ -25,8 +25,6 @@ class TableDetail extends React.Component {
   }
 
   render(){
-    console.log(this.props.table.columns);
-    console.log(this.props);
     return(
 
         <section className='table-detail scroll-sidebar'>
