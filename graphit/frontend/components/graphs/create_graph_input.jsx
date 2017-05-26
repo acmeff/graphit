@@ -99,25 +99,28 @@ class CreateGraphInput extends React.Component{
         <section className='graph-input-form-section'>
           <h2>Create a Graph</h2>
           <h4>What type of graph would you like to make?</h4>
-          <section className='types'>
-            <div className='graph-input'onClick={this.selectType('pie')}>
-              <i className='fa fa-pie-chart fa-2x pie'></i>
+          <div className='types-div'>
+            <section className='types'>
+              <div className='graph-input'onClick={this.selectType('pie')}>
+                <i className='fa fa-pie-chart fa-2x pie'></i>
 
-            <span>Pie/Donut</span>
-            </div>
-            <div className='graph-input'onClick={this.selectType('bar')}>
-              <i className='fa fa-bar-chart fa-2x bar'></i><span>Bar</span>
-            </div>
-            <br/>
-            <div className='graph-input'onClick={this.selectType('line')}>
-              <i className='fa fa-line-chart fa-2x line'></i>
-              <span>Line/Spline</span>
-            </div>
-            <div className='graph-input'onClick={this.selectType('all')}>
-              <i className="fa fa-plus fa-2x area" aria-hidden="true"></i>
-              <span>All Options</span>
-            </div>
-          </section>
+                <span>Pie/Donut</span>
+              </div>
+              <div className='graph-input'onClick={this.selectType('bar')}>
+                <i className='fa fa-bar-chart fa-2x bar'></i><span>Bar</span>
+              </div>
+            </section>
+            <section className='types'>
+              <div className='graph-input'onClick={this.selectType('line')}>
+                <i className='fa fa-line-chart fa-2x line'></i>
+                <span>Line/Spline</span>
+              </div>
+              <div className='graph-input'onClick={this.selectType('all')}>
+                <i className="fa fa-plus fa-2x area" aria-hidden="true"></i>
+                <span>All Options</span>
+              </div>
+            </section>
+          </div>
           <form className='graph-input-form'>
             Data Source
             <section className='option'>
