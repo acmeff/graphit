@@ -15,8 +15,6 @@ Graphit supports uploading csv files and saving the data for future use. Any fil
 
 ![viewing data](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-index.png "All data for a user")
 
-![viewing data set](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/table-detail.png "Viewing single data table")
-
 
 ### Generate visualizations based on the uploaded data
 Users can use their saved data to create and save charts and graphs, which they can then share with other users.
@@ -27,8 +25,7 @@ The graphs are generated based on the user's input. A graph can be created from 
 
 All saved graphs may be displayed from the user's account, and any graph may be shared with another user.
 
-![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")
-![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
+![bar graph](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/bar-detail.png "Bar graph")![pie chart](https://github.com/acmeff/graphit/blob/master/graphit/docs/screenshots/pie-detail.png "Pie chart")
 
 
 
