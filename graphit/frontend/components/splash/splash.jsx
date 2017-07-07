@@ -2,6 +2,7 @@ import React from 'react';
 import SplashLoggedOut from './splash_logged_out';
 import SplashLoggedIn from './splash_logged_in';
 import Canvas from './canvas';
+import Footer from './footer';
 
 class Splash extends React.Component {
   constructor(props){
@@ -19,9 +20,10 @@ class Splash extends React.Component {
 
   render(){
     return (
-      <section className='splash'><Canvas/>
+      <section className='splash'>
+        <Canvas/>
         {this.renderText()}
-
+        <Footer/>
       </section>
     );
   }

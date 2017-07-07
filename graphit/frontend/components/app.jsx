@@ -12,7 +12,8 @@ import CreateGraph from './graphs/create_graph';
 
 const App = () => (
   <section className='app'>
-    <NavContainer/><Route exact path='/' component={SplashContainer}/>
+    <NavContainer/>
+    <Route exact path='/' component={SplashContainer}/>
 
     <AuthRoute path='/signup' component={AuthFormContainer}/>
     <AuthRoute path='/signin' component={AuthFormContainer}/>
