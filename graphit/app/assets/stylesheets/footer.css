@@ -1,0 +1,12 @@
+footer{
+  background-color: #acd5c8;
+}
+
+footer ul {
+  display: flex;
+  justify-content: center;
+}
+
+footer ul li {
+  padding: 10px;
+}
