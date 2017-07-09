@@ -4,7 +4,7 @@ $lightGray: rgba(204, 204, 204, .3);
 .splash{
   display: flex;
   flex-direction: column;
-  height: 91%;
+  height: 92%;
   padding-top: 75px;
   /*position: relative;*/
 }
@@ -74,7 +74,7 @@ $lightGray: rgba(204, 204, 204, .3);
 }
 
 .below-hero {
-  background-color: whitesmoke;
+  background-color: white;
   z-index: -2;
   flex: 1;
   padding-bottom: 1000px;
