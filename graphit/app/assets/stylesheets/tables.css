@@ -86,7 +86,7 @@
 
 .table-li a:hover{
   font-weight:bolder;
-  font-size: 18px;
+  /*text-shadow: 1px 1px gray;*/
 }
 
 .cols{
@@ -186,15 +186,18 @@ tbody tr:nth-child(odd){
 }
 
 .index-sidebar ul li:hover{
-  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px gray;
 }
 
 .index-sidebar h3:hover{
-  font-size: 20px;
+  text-shadow: 1px 1px gray;
+  font-weight: bold;
 }
 
 .detail-sidebar nav *:hover{
-  font-size: 18px;
+  text-shadow: 1px 1px gray;
+  font-weight: bold;
 }
 
 .table-detail .top{

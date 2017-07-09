@@ -58,11 +58,12 @@
 }
 
 .graphs-list h3:hover, .graphs-list h4:hover{
-  font-size: 20px;
+  text-shadow: 1px 1px gray;
 }
 
 .graph-link i:hover{
-  font-size: 90px;
+  text-shadow: 1px 1px gray;
+  font-weight: bold;
 }
 
 .graphs-list{
@@ -123,7 +124,7 @@
 }
 
 .fa-share:hover{
-  font-size: 55px;
+  text-shadow: 1px 1px gray;
 }
 
 .item-options{
