@@ -10,3 +10,8 @@ footer ul {
 footer ul li {
   padding: 10px;
 }
+
+footer img {
+  height: 15px;
+  padding: 0 3px 0 0;
+}
