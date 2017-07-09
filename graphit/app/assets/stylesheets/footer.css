@@ -4,7 +4,8 @@ footer{
 
 footer ul {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-self: center;
 }
 
 footer ul li {
